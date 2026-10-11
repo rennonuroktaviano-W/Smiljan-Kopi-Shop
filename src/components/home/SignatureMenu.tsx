@@ -11,9 +11,9 @@ export default function SignatureMenu() {
       <Container>
         <Reveal>
           <SectionHeading
-            eyebrow="Signature"
-            title="A Few Good Things."
-            description="Beberapa menu pilihan yang kami racik setiap hari, disajikan dengan hati-hati."
+            eyebrow="Andalan"
+            title="Andalan Kami."
+            description="Beberapa racikan pilihan yang kami sajikan setiap hari, dibuat dengan sabar."
           />
         </Reveal>
 
@@ -28,7 +28,7 @@ export default function SignatureMenu() {
         <Reveal className="mt-16">
           <div className="flex justify-center">
             <CtaLink href="/menu" variant="secondary" showArrow>
-              View Full Menu
+              Lihat Menu Lengkap
             </CtaLink>
           </div>
         </Reveal>

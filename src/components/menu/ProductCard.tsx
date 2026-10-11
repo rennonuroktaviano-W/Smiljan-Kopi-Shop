@@ -13,7 +13,7 @@ function OrderAction({ item }: { item: MenuItem }) {
   const orderHref = buildWhatsAppOrderLink([{ name: item.name }]);
 
   if (!orderHref) {
-    return <DisabledCta label="Pemesanan belum aktif" />;
+    return <DisabledCta label="Pemesanan segera hadir" />;
   }
 
   return (
@@ -22,7 +22,7 @@ function OrderAction({ item }: { item: MenuItem }) {
       variant="secondary"
       ariaLabel={`Pesan ${item.name} melalui WhatsApp`}
     >
-      Order
+      Pesan
     </ExternalLink>
   );
 }

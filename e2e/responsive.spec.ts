@@ -48,13 +48,13 @@ test.describe("responsive matrix (§13)", () => {
     await page.goto("/", { waitUntil: "networkidle" });
 
     await expect(
-      page.getByRole("heading", { level: 1, name: /More Than Just Coffee/i })
+      page.getByRole("heading", { level: 1, name: /Kopi Pelan, Hari Tenang/i })
     ).toBeVisible();
     await expect(
-      page.getByRole("link", { name: "Explore Menu" }).first()
+      page.getByRole("link", { name: "Lihat Menu" }).first()
     ).toBeVisible();
     await expect(
-      page.getByRole("link", { name: "Our Story" }).first()
+      page.getByRole("link", { name: "Tentang Kami" }).first()
     ).toBeVisible();
   });
 
@@ -71,17 +71,17 @@ test.describe("responsive matrix (§13)", () => {
     }
   });
 
-  test("header desktop: nav & CTA Order Coffee terlihat", async ({ page }) => {
+  test("header desktop: nav & CTA Pesan Kopi terlihat", async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto("/menu", { waitUntil: "networkidle" });
 
     const header = page.getByRole("banner");
-    await expect(header.getByRole("link", { name: "Home" })).toBeVisible();
+    await expect(header.getByRole("link", { name: "Beranda" })).toBeVisible();
     await expect(header.getByRole("link", { name: "Menu" })).toBeVisible();
-    await expect(header.getByRole("link", { name: "Our Story" })).toBeVisible();
-    await expect(header.getByRole("link", { name: "Visit" })).toBeVisible();
+    await expect(header.getByRole("link", { name: "Tentang Kami" })).toBeVisible();
+    await expect(header.getByRole("link", { name: "Kunjungi" })).toBeVisible();
     await expect(
-      header.getByRole("link", { name: "Order Coffee" })
+      header.getByRole("link", { name: "Pesan Kopi" })
     ).toBeVisible();
   });
 });

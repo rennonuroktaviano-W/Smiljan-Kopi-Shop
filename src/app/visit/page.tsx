@@ -10,9 +10,9 @@ import ExternalLink from "@/components/ui/ExternalLink";
 import Reveal from "@/components/ui/Reveal";
 
 export const metadata: Metadata = {
-  title: "Visit",
+  title: "Kunjungi",
   description:
-    "Ayo kunjungi SMILJAN. Alamat, jam operasional, dan petunjuk arah menunggu konfirmasi pemilik.",
+    "Kunjungi SMILJAN untuk ngopi, bersantai, atau menemukan sudut tenang. Alamat dan jam buka akan segera diumumkan.",
 };
 
 function InfoRow({
@@ -57,8 +57,7 @@ export default function VisitPage() {
 
         <div className="mt-6">
           <DevNotice>
-            Alamat, jam operasional, dan tautan petunjuk arah belum
-            dikonfirmasi pemilik. WhatsApp hanya aktif setelah nomor diatur.
+            Alamat, jam buka, dan petunjuk arah akan kami umumkan segera.
           </DevNotice>
         </div>
 
@@ -67,7 +66,7 @@ export default function VisitPage() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-white">
               <ImageWithFallback
                 src="/images/cafe/interior.svg"
-                alt="Placeholder: ilustrasi meja bar kafe yang minimal"
+                alt="Meja bar kafe yang minimal dalam nuansa hangat"
                 fill
                 sizes="(min-width: 1024px) 58vw, 100vw"
                 className="object-cover"
@@ -89,13 +88,13 @@ export default function VisitPage() {
                     ) : null}
                   </>
                 ) : (
-                  "Alamat resmi menunggu konfirmasi pemilik."
+                  "Alamat akan segera diumumkan."
                 )}
               </InfoRow>
               <InfoRow label="Jam Operasional">
-                {"Jam operasional belum dikonfirmasi (placeholder)."}
+                {"Jam buka segera diumumkan."}
               </InfoRow>
-              <InfoRow label="Contact">
+              <InfoRow label="Kontak">
                 {whatsappHref ? (
                   <ExternalLink
                     href={whatsappHref}
@@ -104,7 +103,7 @@ export default function VisitPage() {
                     {siteConfig.whatsappNumber}
                   </ExternalLink>
                 ) : (
-                  "Nomor WhatsApp belum dikonfigurasi."
+                  "Nomor WhatsApp segera diumumkan."
                 )}
               </InfoRow>
             </dl>
@@ -113,10 +112,10 @@ export default function VisitPage() {
               {whatsappHref ? (
                 <ExternalLink href={whatsappHref}>Chat WhatsApp</ExternalLink>
               ) : (
-                <DisabledCta label="WhatsApp belum aktif" />
+                <DisabledCta label="WhatsApp segera hadir" />
               )}
               {hasDirections ? (
-                <ExternalLink href={siteConfig.mapsUrl}>Directions</ExternalLink>
+                <ExternalLink href={siteConfig.mapsUrl}>Petunjuk Arah</ExternalLink>
               ) : null}
             </div>
 

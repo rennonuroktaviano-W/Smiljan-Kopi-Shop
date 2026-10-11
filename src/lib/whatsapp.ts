@@ -15,7 +15,7 @@ function buildNumber(): string | null {
 
 /**
  * Membangun link WhatsApp untuk pemesanan. Mengembalikan null jika nomor
- * belum dikonfigurasi sehingga UI dapat menampilkan tombol nonaktif.
+ * belum tersedia sehingga UI dapat menampilkan tombol nonaktif.
  */
 export function buildWhatsAppOrderLink(items: OrderItem[]): string | null {
   const number = buildNumber();

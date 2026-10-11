@@ -34,7 +34,7 @@ export default function VisitSection() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-white">
               <ImageWithFallback
                 src="/images/cafe/interior.svg"
-                alt="Placeholder: ilustrasi meja bar kafe yang minimal"
+                alt="Meja bar kafe yang minimal dalam nuansa hangat"
                 fill
                 sizes="(min-width: 1024px) 48vw, 100vw"
                 className="object-cover"
@@ -45,17 +45,17 @@ export default function VisitSection() {
           <Reveal delay={120} className="order-1 lg:order-2 lg:col-span-6">
             <div className="lg:pl-10">
               <p className="text-label font-semibold uppercase tracking-[0.3em] text-olive-deep">
-                Visit
+                Kunjungi
               </p>
               <h2 className="mt-4 font-display text-section text-obsidian">
-                Your Place for Good Coffee.
+                Singgah untuk Ngopi.
               </h2>
 
               {siteConfig.businessInfoReady ? null : (
                 <div className="mt-5">
                   <DevNotice>
-                    Alamat, jam operasional, dan tautan petunjuk arah masih
-                    menunggu konfirmasi pemilik.
+                    Alamat dan jam buka akan kami umumkan segera — kami sedang
+                    siap-siap.
                   </DevNotice>
                 </div>
               )}
@@ -73,11 +73,11 @@ export default function VisitSection() {
                       ) : null}
                     </>
                   ) : (
-                    "Alamat resmi menunggu konfirmasi pemilik."
+                    "Alamat akan segera diumumkan."
                   )}
                 </InfoRow>
                 <InfoRow label="Jam Operasional">
-                  {"Jam operasional belum dikonfirmasi (placeholder)."}
+                  {"Jam buka segera diumumkan."}
                 </InfoRow>
               </dl>
 
@@ -92,7 +92,7 @@ export default function VisitSection() {
                     rel="noopener noreferrer"
                     className="inline-flex min-h-11 items-center justify-center rounded-full border border-obsidian/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-obsidian transition-colors hover:bg-obsidian hover:text-ivory"
                   >
-                    Directions
+                    Petunjuk Arah
                   </a>
                 ) : null}
               </div>

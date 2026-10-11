@@ -6,9 +6,9 @@ import CtaLink from "@/components/ui/CtaLink";
 import Reveal from "@/components/ui/Reveal";
 
 export const metadata: Metadata = {
-  title: "Our Story",
+  title: "Tentang Kami",
   description:
-    "Cerita di balik SMILJAN: specialty coffee yang diracik dengan niat, pelan, dan penuh perhatian.",
+    "Cerita di balik SMILJAN: kopi yang diracik pelan, dari biji pilihan sampai cangkir Anda.",
 };
 
 function ValueCard({
@@ -34,18 +34,18 @@ export default function OurStoryPage() {
           <Reveal>
             <div className="max-w-3xl">
               <p className="text-label font-semibold uppercase tracking-[0.3em] text-olive-deep">
-                Brand Story
+                Tentang Kami
               </p>
               <h1 className="mt-4 font-display text-section text-obsidian">
-                Our Story
+                Cerita Kami
               </h1>
             </div>
           </Reveal>
 
           <div className="mt-6">
             <DevNotice>
-              Narasi, nilai, dan foto di halaman ini masih kandidat — hanya
-              dipublikasikan setelah disetujui pemilik.
+              Cerita di halaman ini masih kami tulis sedikit demi sedikit.
+              Nantikan versi lengkapnya.
             </DevNotice>
           </div>
 
@@ -68,7 +68,7 @@ export default function OurStoryPage() {
                   Cerita kami masih ditulis setiap hari, satu cangkir pada satu
                   waktu.{" "}
                   <span className="italic text-obsidian">
-                    Good Coffee. Better Days.
+                    Kopi Baik. Hari Baik.
                   </span>
                 </p>
               </div>
@@ -78,7 +78,7 @@ export default function OurStoryPage() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-obsidian">
                 <ImageWithFallback
                   src="/images/story/barista.svg"
-                  alt="Placeholder: siluet barista menyiapkan seduhan"
+                  alt="Siluet barista menyiapkan seduhan"
                   fill
                   sizes="(min-width: 1024px) 58vw, 100vw"
                   className="object-cover"
@@ -117,7 +117,7 @@ export default function OurStoryPage() {
           <Reveal>
             <div className="mt-16 flex flex-wrap gap-4">
               <CtaLink href="/menu" variant="primary" showArrow>
-                Explore Menu
+                Lihat Menu
               </CtaLink>
               <CtaLink href="/visit" variant="secondary">
                 Kunjungi Kami

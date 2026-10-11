@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | SMILJAN",
   },
   description:
-    "Smiljan Kopi Shop. Modern specialty coffee, thoughtfully brewed for your everyday ritual.",
+    "SMILJAN Kopi Shop. Kopi yang diracik pelan, untuk hari yang dijalani tenang.",
   applicationName: "SMILJAN Kopi Shop",
   category: "coffee shop",
   keywords: [
@@ -42,14 +42,14 @@ export const metadata: Metadata = {
     type: "website",
     title: "SMILJAN — KOPI SHOP",
     description:
-      "Smiljan Kopi Shop. Modern specialty coffee, thoughtfully brewed for your everyday ritual.",
+      "SMILJAN Kopi Shop. Kopi yang diracik pelan, untuk hari yang dijalani tenang.",
     url: siteUrl,
   },
   twitter: {
     card: "summary",
     title: "SMILJAN — KOPI SHOP",
     description:
-      "Smiljan Kopi Shop. Modern specialty coffee, thoughtfully brewed for your everyday ritual.",
+      "SMILJAN Kopi Shop. Kopi yang diracik pelan, untuk hari yang dijalani tenang.",
   },
   robots: {
     index: true,

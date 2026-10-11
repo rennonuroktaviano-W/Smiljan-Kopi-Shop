@@ -1,10 +1,9 @@
 import type { MenuCategory, MenuItem } from "@/types/menu";
 
 /**
- * Daftar menu placeholder untuk pengembangan.
+ * Daftar menu awal (draft) untuk pengembangan.
  *
- * Nama, harga, dan deskripsi di bawah BELUM diverifikasi pemilik.
- * Ganti dengan menu asli sebelum launch produksi (lihat PRD bagian 23).
+ * Nama, harga, dan deskripsi akan disesuaikan saat data final tersedia.
  * Simpan seluruh harga di satu tempat ini agar mudah diperbarui.
  */
 export const menuItems: MenuItem[] = [
@@ -15,7 +14,7 @@ export const menuItems: MenuItem[] = [
     price: 28000,
     category: "coffee",
     image: "/images/menu/espresso.svg",
-    imageAlt: "Placeholder cangkir espresso hitam bernuansa gelap",
+    imageAlt: "Cangkir espresso hitam bernuansa gelap",
     featured: true,
     available: true,
   },
@@ -26,7 +25,7 @@ export const menuItems: MenuItem[] = [
     price: 34000,
     category: "coffee",
     image: "/images/menu/cappuccino.svg",
-    imageAlt: "Placeholder kapucino dengan latte art",
+    imageAlt: "Kapucino dengan latte art",
     featured: true,
     available: true,
   },
@@ -37,7 +36,7 @@ export const menuItems: MenuItem[] = [
     price: 38000,
     category: "coffee",
     image: "/images/menu/pour-over.svg",
-    imageAlt: "Placeholder alat pour over dan carafe",
+    imageAlt: "Alat pour over dan carafe",
     featured: true,
     available: true,
   },
@@ -48,7 +47,7 @@ export const menuItems: MenuItem[] = [
     price: 36000,
     category: "coffee",
     image: "/images/menu/cold-brew.svg",
-    imageAlt: "Placeholder cold brew dalam gelas tinggi kaca",
+    imageAlt: "Cold brew dalam gelas tinggi kaca",
     available: true,
   },
   {
@@ -58,7 +57,7 @@ export const menuItems: MenuItem[] = [
     price: 34000,
     category: "non-coffee",
     image: "/images/menu/matcha.svg",
-    imageAlt: "Placeholder mangkuk matcha dengan pengocok bambu",
+    imageAlt: "Mangkuk matcha dengan pengocok bambu",
     available: true,
   },
   {
@@ -68,7 +67,7 @@ export const menuItems: MenuItem[] = [
     price: 32000,
     category: "non-coffee",
     image: "/images/menu/chocolate.svg",
-    imageAlt: "Placeholder cokelat panas dalam mug",
+    imageAlt: "Cokelat panas dalam mug",
     available: true,
   },
   {
@@ -78,7 +77,7 @@ export const menuItems: MenuItem[] = [
     price: 26000,
     category: "food",
     image: "/images/menu/croissant.svg",
-    imageAlt: "Placeholder croissant mentega",
+    imageAlt: "Croissant mentega",
     available: true,
   },
   {
@@ -88,7 +87,7 @@ export const menuItems: MenuItem[] = [
     price: 30000,
     category: "food",
     image: "/images/menu/pastry.svg",
-    imageAlt: "Placeholder aneka pastry bulat kecil",
+    imageAlt: "Aneka pastry bulat kecil",
     available: true,
   },
 ];

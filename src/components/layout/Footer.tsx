@@ -35,7 +35,7 @@ export default function Footer() {
         <div className="md:col-span-5">
           <Logo tone="light" />
           <p className="mt-6 max-w-sm text-body text-fog">
-            {siteConfig.tagline} {siteConfig.headline}
+            {siteConfig.tagline}
           </p>
         </div>
 
@@ -80,7 +80,7 @@ export default function Footer() {
             ) : null}
             {!hasContact ? (
               <li className="text-fog">
-                Kontak bisnis akan ditambahkan setelah diverifikasi pemilik.
+                WhatsApp dan sosial media segera hadir.
               </li>
             ) : null}
           </ul>
@@ -90,7 +90,6 @@ export default function Footer() {
       <div className="border-t border-ivory/10">
         <Container className="flex flex-col gap-2 py-6 text-sm text-fog sm:flex-row sm:items-center sm:justify-between">
           <p>© {year} {siteConfig.name} {siteConfig.descriptor}. Hak cipta dilindungi.</p>
-          <p>Modern Specialty Coffee.</p>
         </Container>
       </div>
     </footer>

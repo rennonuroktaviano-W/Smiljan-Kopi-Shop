@@ -6,7 +6,7 @@ test.describe("whatsapp NONAKTIF (nomor kosong) (§9)", () => {
     await page.goto("/menu", { waitUntil: "networkidle" });
 
     await expect(
-      page.getByText("Pemesanan belum aktif", { exact: true }).first()
+      page.getByText("Pemesanan segera hadir", { exact: true }).first()
     ).toBeVisible();
     await expect(page.locator('a[href*="wa.me"]')).toHaveCount(0);
     await expect(page.locator('span[aria-disabled="true"]').first()).toBeVisible();
@@ -15,7 +15,7 @@ test.describe("whatsapp NONAKTIF (nomor kosong) (§9)", () => {
   test("/visit: WhatsApp belum aktif, tanpa tautan wa.me", async ({ page }) => {
     await page.goto("/visit", { waitUntil: "networkidle" });
 
-    await expect(page.getByText("WhatsApp belum aktif")).toBeVisible();
+    await expect(page.getByText("WhatsApp segera hadir")).toBeVisible();
     await expect(page.locator('a[href*="wa.me"]')).toHaveCount(0);
   });
 

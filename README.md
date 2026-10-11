@@ -1,6 +1,6 @@
 # SMILJAN Kopi Shop
 
-Website editorial & minimal untuk **SMILJAN Kopi Shop** — "Good Coffee. Better Days."
+Website editorial & minimal untuk **SMILJAN Kopi Shop** — "Kopi Baik, Hari Baik." (copy telah disetujui pemilik.)
 
 Dibangun dengan Next.js (App Router), TypeScript, dan Tailwind CSS v4. Seluruh rute di-prerender secara statis.
 

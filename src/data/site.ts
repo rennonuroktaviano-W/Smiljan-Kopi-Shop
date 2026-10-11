@@ -4,10 +4,10 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { href: "/", label: "Home" },
+  { href: "/", label: "Beranda" },
   { href: "/menu", label: "Menu" },
-  { href: "/our-story", label: "Our Story" },
-  { href: "/visit", label: "Visit" },
+  { href: "/our-story", label: "Tentang Kami" },
+  { href: "/visit", label: "Kunjungi" },
 ];
 
 export interface SiteConfig {
@@ -29,14 +29,14 @@ export interface SiteConfig {
 /**
  * Sumber tunggal konfigurasi bisnis.
  * Nilai dibaca dari environment (NEXT_PUBLIC_*). Kosong = data belum
- * diverifikasi; UI menampilkan placeholder development yang jelas.
+ * lengkap; UI menampilkan pesan netral yang jujur sampai data final masuk.
  */
 export const siteConfig: SiteConfig = {
   name: "SMILJAN",
   descriptor: "KOPI SHOP",
-  tagline: "Good Coffee. Better Days.",
-  headline: "More Than Just Coffee.",
-  orderCtaLabel: "Order Coffee",
+  tagline: "Kopi Baik, Hari Baik.",
+  headline: "Kopi Pelan, Hari Tenang.",
+  orderCtaLabel: "Pesan Kopi",
   whatsappNumber:
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/[^\d]/g, "") ?? "",
   instagramUrl: process.env.NEXT_PUBLIC_INSTAGRAM_URL?.trim() ?? "",

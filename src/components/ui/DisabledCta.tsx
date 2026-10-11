@@ -5,13 +5,13 @@ interface DisabledCtaProps {
 }
 
 /**
- * Tombol nonaktif yang jelas sebagai fallback ketika WhatsApp belum
- * dikonfigurasi. Tidak interaktif, namun tetap terlihat dan memberikan
+ * Tombol nonaktif sebagai fallback ketika layanan belum tersedia (misalnya
+ * WhatsApp belum siap). Tidak interaktif, tetap terlihat, dan memberi
  * keterangan lewat atribut title.
  */
 export default function DisabledCta({
   label,
-  hint = "Fitur belum aktif karena data belum dikonfigurasi.",
+  hint = "Segera hadir — cek kembali dalam beberapa hari.",
   className = "",
 }: DisabledCtaProps) {
   return (

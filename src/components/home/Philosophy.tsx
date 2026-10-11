@@ -11,10 +11,10 @@ export default function Philosophy() {
           <Reveal className="lg:col-span-5">
             <div className="max-w-md">
               <p className="text-label font-semibold uppercase tracking-[0.3em] text-olive-deep">
-                Philosophy
+                Pandangan
               </p>
               <h2 className="mt-4 font-display text-section text-obsidian">
-                Made with Intention.
+                Kami Tidak Terburu-buru.
               </h2>
               <p className="mt-5 text-body text-graphite">
                 Kami percaya secangkir kopi yang diseduh dengan sungguh-sungguh
@@ -27,7 +27,7 @@ export default function Philosophy() {
               </p>
               <div className="mt-8">
                 <CtaLink href="/our-story" variant="secondary" showArrow>
-                  Our Story
+                  Tentang Kami
                 </CtaLink>
               </div>
             </div>
@@ -37,7 +37,7 @@ export default function Philosophy() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-white">
               <ImageWithFallback
                 src="/images/story/space.svg"
-                alt="Placeholder: suasana editorial peralatan seduh dan biji kopi"
+                alt="Meja peralatan seduh dan biji kopi dalam nuansa gelap"
                 fill
                 sizes="(min-width: 1024px) 58vw, 100vw"
                 className="object-cover"

@@ -6,9 +6,9 @@ import MenuGrid from "@/components/menu/MenuGrid";
 import Reveal from "@/components/ui/Reveal";
 
 export const metadata: Metadata = {
-  title: "Our Menu",
+  title: "Menu Kami",
   description:
-    "Jelajahi menu SMILJAN: kopi specialty, minuman non-kopi, dan pilihan pastry. Informasi harga dan ketersediaan menunggu konfirmasi pemilik.",
+    "Menu SMILJAN: kopi, minuman non-kopi, dan pilihan pastry. Pesan langsung melalui WhatsApp.",
 };
 
 export default function MenuPage() {
@@ -21,7 +21,7 @@ export default function MenuPage() {
               Menu
             </p>
             <h1 className="mt-4 font-display text-section text-obsidian">
-              Our Menu
+              Menu Kami
             </h1>
             <p className="mt-5 text-body text-graphite">
               Pilih favorit Anda, lalu pesan langsung melalui WhatsApp.
@@ -31,8 +31,8 @@ export default function MenuPage() {
 
         <div className="mt-6">
           <DevNotice>
-            Daftar menu, harga, dan kategori di bawah masih kumpulan sampel
-            yang belum diverifikasi pemilik.
+            Menu di bawah ini sedang kami susun ulang. Harga dan ketersediaan
+            akhir menyusul.
           </DevNotice>
         </div>
 

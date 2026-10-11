@@ -86,7 +86,7 @@ test.describe("accessibility basics (§14)", () => {
 
     const heading = reducedPage.getByRole("heading", {
       level: 1,
-      name: /More Than Just Coffee/i,
+      name: /Kopi Pelan, Hari Tenang/i,
     });
     await expect(heading).toBeVisible();
     const opacity = await heading.evaluate((el) => getComputedStyle(el).opacity);

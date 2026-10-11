@@ -28,7 +28,7 @@ export default function Hero() {
         <div className="max-w-3xl">
           <Reveal>
             <p className="text-label font-semibold uppercase tracking-[0.34em] text-olive">
-              Specialty Coffee
+              Kopi Pilihan
             </p>
           </Reveal>
 
@@ -40,18 +40,19 @@ export default function Hero() {
 
           <Reveal delay={200}>
             <p className="mt-6 max-w-md text-sub text-fog">
-              Thoughtfully brewed for your everyday ritual. A quiet place where
-              good coffee, better days, and simpler conversations begin.
+              Kopi diracik satu per satu, tanpa terburu-buru. Duduklah
+              sebentar, bercakap santai, dan biarkan hari berjalan lebih
+              sederhana.
             </p>
           </Reveal>
 
           <Reveal delay={320}>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <CtaLink href="/menu" variant="primary-on-dark" showArrow>
-                Explore Menu
+                Lihat Menu
               </CtaLink>
               <CtaLink href="/our-story" variant="secondary-on-dark">
-                Our Story
+                Tentang Kami
               </CtaLink>
             </div>
           </Reveal>

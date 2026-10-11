@@ -18,11 +18,11 @@ export default function EditorialBreak() {
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-section text-ivory">
-              Every Cup Has a Story.
+              Setiap Cangkir Punya Ceritanya.
             </h2>
             <p className="mt-5 text-body text-fog">
-              Dari tangan barista hingga cangkir Anda — setiap langkah adalah
-              bagian dari cerita yang kami jaga setiap hari.
+              Dari tangan barista sampai cangkir Anda — setiap langkah kami
+              kerjakan tanpa tergesa-gesa.
             </p>
           </div>
         </Reveal>

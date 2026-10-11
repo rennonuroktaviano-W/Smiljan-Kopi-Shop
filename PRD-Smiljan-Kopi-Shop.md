@@ -113,11 +113,11 @@ Gunakan placeholder yang jelas untuk informasi bisnis yang belum diberikan. Jang
 - Nama tampilan: **SMILJAN**
 - Descriptor: **KOPI SHOP**
 - Positioning visual: modern specialty coffee, editorial, minimal.
-- Tagline kandidat: **“Good Coffee. Better Days.”**
-- Headline kandidat: **“More Than Just Coffee.”**
-- Copy kandidat, bukan fakta yang sudah diverifikasi: “Thoughtfully brewed for your everyday ritual.”
+- Tagline kandidat: **“Kopi Baik, Hari Baik.”**
+- Headline kandidat: **“Kopi Pelan, Hari Tenang.”**
+- Copy kandidat, bukan fakta yang sudah diverifikasi: “Kopi diracik satu per satu, tanpa terburu-buru.”
 
-Tagline dan copy tersebut perlu persetujuan pemilik sebelum rilis. Jangan menyiratkan klaim produk atau bisnis yang belum dikonfirmasi.
+Copy versi 1 di atas telah disetujui pemilik dan boleh direvisi kemudian. Jangan menyiratkan klaim produk atau bisnis yang belum dikonfirmasi.
 
 ### Palet warna
 | Token | Hex | Penggunaan |
@@ -177,8 +177,8 @@ Jika jumlah konten belum cukup, halaman story dapat menggunakan layout ringkas t
 ### 8.1 Header / Navigation
 **Desktop**
 - Logo “SMILJAN” dan descriptor “KOPI SHOP”.
-- Navigasi: Home, Menu, Our Story, Visit.
-- CTA “Order Coffee” atau label serupa.
+- Navigasi: Beranda, Menu, Tentang Kami, Kunjungi.
+- CTA “Pesan Kopi” atau label serupa.
 - Posisi awal dapat transparan di atas hero; setelah scroll, background solid dengan kontras memadai.
 - Header sticky hanya jika tidak mengganggu ruang baca atau mobile.
 
@@ -196,11 +196,11 @@ Jika jumlah konten belum cukup, halaman story dapat menggunakan layout ringkas t
 
 ### 8.2 Hero
 - Section pembuka dengan background obsidian atau fotografi gelap berkualitas.
-- Eyebrow: `SPECIALTY COFFEE`.
-- Headline kandidat: `More Than Just Coffee.`
+- Eyebrow: `KOPI PILIHAN`.
+- Headline kandidat: `Kopi Pelan, Hari Tenang.`
 - Supporting copy pendek, maksimal sekitar 2–3 baris pada desktop.
-- Primary CTA: `Explore Menu`.
-- Secondary CTA: `Our Story`.
+- Primary CTA: `Lihat Menu`.
+- Secondary CTA: `Tentang Kami`.
 - Foto hero: close-up espresso, barista, atau produk yang benar-benar mewakili Smiljan.
 - Berikan overlay yang cukup untuk keterbacaan teks.
 - Elemen tambahan seperti scroll indicator bersifat opsional dan tidak boleh menghalangi akses.
@@ -213,13 +213,13 @@ Jika jumlah konten belum cukup, halaman story dapat menggunakan layout ringkas t
 - Tidak ada animasi yang menunda akses ke konten utama.
 
 ### 8.3 Signature Menu
-- Judul kandidat: `A Few Good Things.`
+- Judul kandidat: `Andalan Kami.`
 - Tampilkan 3–4 produk unggulan yang dikonfirmasi pemilik.
 - Kartu terdiri atas foto, nama, deskripsi singkat, harga IDR, dan link/tombol aksi.
 - Rasio gambar konsisten, misalnya 4:5 atau 1:1.
 - Hover desktop: scale foto kecil, transisi sekitar 250–350 ms.
 - Mobile tidak bergantung pada hover.
-- CTA `View Full Menu`.
+- CTA `Lihat Menu Lengkap`.
 
 **Acceptance criteria**
 - Produk dan harga berasal dari data terpusat.
@@ -228,7 +228,7 @@ Jika jumlah konten belum cukup, halaman story dapat menggunakan layout ringkas t
 - Kartu tidak mengandung nested links/buttons yang tidak valid.
 
 ### 8.4 Philosophy / Brand Story
-- Judul kandidat: `Made with Intention.`
+- Judul kandidat: `Kami Tidak Terburu-buru.`
 - Layout editorial asimetris: foto dan teks dengan proporsi seimbang.
 - Narasi singkat tentang brand dan pengalaman yang ingin diciptakan.
 - CTA ke `/our-story`.
@@ -236,11 +236,11 @@ Jika jumlah konten belum cukup, halaman story dapat menggunakan layout ringkas t
 
 ### 8.5 Editorial Break (opsional)
 - Foto detail biji kopi, proses brewing, atau tekstur interior.
-- Headline singkat, misalnya `Every Cup Has a Story.`
+- Headline singkat, misalnya `Setiap Cangkir Punya Ceritanya.`
 - Hapus section ini jika konten kurang atau hanya mengulang pesan yang sama.
 
 ### 8.6 Visit Section
-- Judul kandidat: `Your Place for Good Coffee.`
+- Judul kandidat: `Singgah untuk Ngopi.`
 - Alamat, jam buka, kontak, dan tautan directions.
 - Foto interior jika tersedia.
 - Embed peta hanya jika lokasi terverifikasi dan dampak performa dapat diterima; jika tidak, gunakan link directions.
@@ -292,7 +292,7 @@ Contoh isi pesan, bukan nomor atau produk final:
 
 Keranjang lokal sederhana boleh ditambahkan hanya jika memang disepakati dalam scope. Jangan mengklaim pesanan telah diterima sebelum pelanggan mengirim pesan dan bisnis mengonfirmasi.
 
-## 10. Spesifikasi Our Story
+## 10. Spesifikasi Tentang Kami
 
 - Hero dengan judul editorial.
 - Narasi brand yang disetujui pemilik.
@@ -301,7 +301,7 @@ Keranjang lokal sederhana boleh ditambahkan hanya jika memang disepakati dalam s
 - CTA menuju menu atau lokasi.
 - Gunakan hierarki heading semantik (`h1`, `h2`, `h3`) dan paragraf yang mudah dibaca.
 
-## 11. Spesifikasi Visit
+## 11. Spesifikasi Kunjungi
 
 - Headline dan pengantar singkat.
 - Alamat lengkap yang terverifikasi.
@@ -576,8 +576,8 @@ Checklist berikut harus diperbarui seiring implementasi. Todo baru boleh dicenta
 - [x] Implementasi philosophy/story section.
 - [x] Implementasi visit section.
 - [x] Implementasi halaman menu dan kategori.
-- [x] Implementasi halaman Our Story.
-- [x] Implementasi halaman Visit.
+- [x] Implementasi halaman Tentang Kami.
+- [x] Implementasi halaman Kunjungi.
 - [x] Implementasi WhatsApp ordering.
 - [x] Implementasi responsive behavior seluruh halaman.
 - [x] Implementasi motion dan reduced-motion behavior.

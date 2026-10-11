@@ -13,17 +13,17 @@ export default function ClosingCta() {
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-label font-semibold uppercase tracking-[0.3em] text-olive">
-              Order
+              Pesan
             </p>
             <h2 className="mt-4 font-display text-section">
-              Ready for a Good Cup?
+              Waktunya Ngopi.
             </h2>
             <p className="mt-5 text-body text-fog">
               Lihat menu, pilih favorit Anda, dan pesan untuk dibawa pulang.
             </p>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
               <CtaLink href="/menu" variant="primary-on-dark" showArrow>
-                Explore Menu
+                Lihat Menu
               </CtaLink>
               {whatsappHref ? (
                 <ExternalLink href={whatsappHref} variant="secondary-on-dark">
