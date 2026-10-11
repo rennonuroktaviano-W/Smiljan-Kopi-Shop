@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Placeholder: matcha bowl and whisk">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2efe7"/>
+      <stop offset="100%" stop-color="#d0cbbb"/>
+    </linearGradient>
+    <radialGradient id="m" cx="45%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#7c8a4f"/>
+      <stop offset="100%" stop-color="#4f5c30"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#b)"/>
+  <circle cx="400" cy="420" r="316" fill="none" stroke="#dcd8ce" stroke-width="1.5"/>
+  <ellipse cx="400" cy="770" rx="250" ry="30" fill="#000000" opacity="0.1"/>
+  <path d="M180 620 a120 120 0 0 0 240 0 a120 120 0 0 0 -240 0 Z" fill="#e7e3d8"/>
+  <path d="M300 560 h200 q16 120 -100 174 q-116 -54 -100 -174 Z" fill="#c9c4b4"/>
+  <path d="M304 556 q94 16 192 0 q-6 104 -96 160 q-90 -56 -96 -160 Z" fill="#b8b2a0"/>
+  <ellipse cx="400" cy="560" rx="96" ry="30" fill="url(#m)"/>
+  <ellipse cx="392" cy="552" rx="26" ry="9" fill="#8a9a5a" opacity="0.8"/>
+  <path d="M400 260 v-90 M472 288 l-40 -64 M328 288 l40 -64 M528 352 l8 -76 M272 352 l-8 -76" stroke="#111111" stroke-width="9" stroke-linecap="round"/>
+  <path d="M400 560 q-10 -20 -30 -20 q-22 0 -28 24 q-8 30 20 44 q26 12 38 -8 q12 -18 -2 -30 q-14 -14 -28 -12 q-12 2 -12 14 q0 12 14 14 q16 2 28 -14" stroke="#111111" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M332 470 Q310 420 326 388" stroke="#a8a49b" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <path d="M468 1046" stroke="none" fill="none"/>
+</svg>

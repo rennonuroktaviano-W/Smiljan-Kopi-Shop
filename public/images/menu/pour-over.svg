@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Placeholder: pour-over brew set">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2efe7"/>
+      <stop offset="100%" stop-color="#cfcabb"/>
+    </linearGradient>
+    <radialGradient id="cof" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#4a3b28"/>
+      <stop offset="100%" stop-color="#241c12"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#b)"/>
+  <circle cx="400" cy="420" r="316" fill="none" stroke="#dcd8ce" stroke-width="1.5"/>
+  <ellipse cx="400" cy="800" rx="260" ry="30" fill="#000000" opacity="0.1"/>
+  <path d="M150 700 L650 700 Q660 700 660 690 L640 560 Q638 548 626 548 L174 548 Q162 548 160 560 L140 690 Q140 700 150 700 Z" fill="#b8b2a0"/>
+  <path d="M196 548 L604 548 Q610 530 604 470 L196 470 Q190 530 196 548 Z" fill="url(#cof)"/>
+  <path d="M214 470 h372 a12 12 0 0 0 12 -12 v-86 a26 26 0 0 0 -26 -26 h-344 a26 26 0 0 0 -26 26 v86 a12 12 0 0 0 12 12 Z" fill="#e7e3d8"/>
+  <path d="M246 346 h308 a0 0 0 0 1 0 0 l-24 48 a0 0 0 0 1 -26 0 h-208 a0 0 0 0 1 -26 0 l-24 -48 a0 0 0 0 1 0 0 Z" fill="#b8b2a0"/>
+  <ellipse cx="400" cy="656" rx="60" ry="60" fill="#191917"/>
+  <path d="M360 672 q32 -18 64 0" stroke="#3a3935" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M420 320 Q400 270 414 240" stroke="#a8a49b" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.55"/>
+  <path d="M452 330 Q446 284 462 258" stroke="#a8a49b" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.4"/>
+</svg>

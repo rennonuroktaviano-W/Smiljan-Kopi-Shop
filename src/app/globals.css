@@ -1,1 +1,80 @@
 @import "tailwindcss";
+
+@theme {
+  /* Brand palette */
+  --color-obsidian: #111111;
+  --color-ivory: #f5f3ee;
+  --color-stone: #dcd8ce;
+  --color-olive: #858675;
+  --color-graphite: #6b6b67;
+  --color-white: #ffffff;
+  --color-fog: #a8a49b;
+
+  /* Typography */
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-display: var(--font-playfair), ui-serif, Georgia, "Times New Roman",
+    serif;
+
+  /* Responsive type scale (clamp: mobile / desktop) */
+  --text-hero: clamp(2.625rem, 1.625rem + 5vw, 6.5rem);
+  --text-hero--line-height: 1.02;
+  --text-section: clamp(2rem, 1.5rem + 2.5vw, 4rem);
+  --text-section--line-height: 1.08;
+  --text-sub: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);
+  --text-sub--line-height: 1.35;
+  --text-body: clamp(0.9375rem, 0.9125rem + 0.125vw, 1.0625rem);
+  --text-body--line-height: 1.65;
+  --text-label: clamp(0.6875rem, 0.675rem + 0.0625vw, 0.8125rem);
+  --text-label--line-height: 1.4;
+  --text-price: 0.9375rem;
+
+  /* Layout */
+  --container-page: 80rem;
+  --container-wide: 86rem;
+
+  /* Motion */
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-ivory font-sans text-body text-obsidian antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-obsidian);
+    color: var(--color-ivory);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-olive);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Skip link: hidden until focused */
+.skip-link {
+  @apply sr-only;
+}
+
+.skip-link:focus {
+  @apply not-sr-only fixed left-4 top-4 z-[60] rounded-sm bg-obsidian px-4 py-3 text-sm font-medium text-ivory;
+}

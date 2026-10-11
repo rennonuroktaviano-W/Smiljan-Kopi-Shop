@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Placeholder: cold brew in a tall glass">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2efe7"/>
+      <stop offset="100%" stop-color="#d3cebf"/>
+    </linearGradient>
+    <linearGradient id="gl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8e2d3" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#3b2d1d"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#b)"/>
+  <circle cx="400" cy="420" r="316" fill="none" stroke="#dcd8ce" stroke-width="1.5"/>
+  <ellipse cx="400" cy="780" rx="250" ry="30" fill="#000000" opacity="0.1"/>
+  <path d="M300 660 q-4 -210 -10 -320 a10 10 0 0 1 10 -10 h200 a10 10 0 0 1 10 10 q-5 110 -9 320 a46 46 0 0 1 -46 44 h-109 a46 46 0 0 1 -46 -44 Z" fill="#e8e2d3"/>
+  <rect x="308" y="330" width="184" height="330" rx="18" fill="#eae5d8"/>
+  <rect x="316" y="338" width="168" height="314" rx="12" fill="url(#gl)"/>
+  <path d="M340 380 q18 26 36 0 m44 -18 q16 24 32 0 m-112 44 q16 24 32 0 m50 -16 q16 24 32 0" stroke="#f5f3ee" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <path d="M330 470 h140 M330 520 h140 M330 570 h140" stroke="#191917" stroke-width="8" stroke-linecap="round"/>
+  <path d="M468 350 q74 30 70 130 q-2 70 -34 120" stroke="#8a897e" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M336 300 h140 v-40 a70 70 0 0 0 -140 0 Z" fill="#111111" opacity="0.85"/>
+  <path d="M360 260 Q340 210 356 178" stroke="#a8a49b" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <path d="M392 266 Q384 220 398 196" stroke="#a8a49b" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.38"/>
+</svg>

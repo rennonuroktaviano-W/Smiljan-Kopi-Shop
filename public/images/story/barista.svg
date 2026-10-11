@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Placeholder: barista silhouette preparing a pour-over">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#191917"/>
+      <stop offset="100%" stop-color="#0c0c0c"/>
+    </radialGradient>
+    <pattern id="g" width="200" height="200" patternUnits="userSpaceOnUse">
+      <circle cx="30" cy="60" r="1.4" fill="#f5f3ee" opacity="0.05"/>
+      <circle cx="140" cy="20" r="1.1" fill="#f5f3ee" opacity="0.05"/>
+      <circle cx="180" cy="150" r="1.5" fill="#f5f3ee" opacity="0.04"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#g)"/>
+  <ellipse cx="600" cy="790" rx="420" ry="60" fill="#000000" opacity="0.5"/>
+  <ellipse cx="600" cy="790" rx="300" ry="34" fill="#222220"/>
+  <circle cx="340" cy="470" r="120" fill="#f5f3ee" opacity="0.03"/>
+  <path d="M500 700 L490 470 Q420 520 340 560 L300 700 Z" fill="#151514"/>
+  <path d="M500 470 L700 470 L700 700 L500 700 Z" fill="#141414"/>
+  <path d="M700 470 L742 560 L742 700 L700 700 Z" fill="#191918"/>
+  <circle cx="700" cy="440" r="52" fill="#0f0f0f"/>
+  <path d="M652 470 h44 v-30 h30 v44 h-44 v-14 Z" fill="#111111"/>
+  <path d="M612 500 L672 420" stroke="#858675" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="600" cy="480" rx="34" ry="10" fill="#2b2b28"/>
+  <path d="M720 420 q64 0 130 20 q-40 26 -120 30" fill="#2a2a27"/>
+  <path d="M848 440 q40 14 72 40 q-30 18 -80 18" fill="#242423"/>
+  <path d="M760 330 q-30 -60 6 -100 q44 -34 78 6 q-8 40 -48 58 q-20 10 -36 36 Z" fill="#181817"/>
+  <path d="M576 320 q-4 -36 14 -60 q22 -26 48 -16 q14 22 4 52 q-12 30 -40 36 q-20 4 -26 -12 Z" fill="#161615"/>
+  <path d="M340 240 Q320 190 340 156" stroke="#a8a49b" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.45"/>
+  <path d="M384 248 Q374 202 390 176" stroke="#a8a49b" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.32"/>
+  <text x="80" y="820" font-family="Georgia, serif" font-size="40" letter-spacing="12" fill="#f5f3ee" opacity="0.22">SMILJAN</text>
+</svg>
