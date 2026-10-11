@@ -1,3 +1,9 @@
+import Hero from "@/components/home/Hero";
+
 export default function Home() {
-  return <section className="flex min-h-screen items-center justify-center">Memuat...</section>;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 }
