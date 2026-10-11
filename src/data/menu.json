@@ -34,12 +34,12 @@
     "category": "coffee",
     "price": null,
     "image": "/images/menu/caramel-macchiato.jpg",
-    "imageAlt": "Caramel macchiato dalam gelas kaca",
+    "imageAlt": "Caramel latte dalam gelas kaca dengan es",
     "featured": true,
     "availabilityStatus": "available",
-    "imageSource": "Wikimedia Commons",
-    "imageLicense": "CC BY-SA 4.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caramel_Latte_Macchiato.jpg"
+    "imageSource": "Unsplash",
+    "imageLicense": "Unsplash License",
+    "sourceUrl": "https://unsplash.com/photos/1599398054066-846f28917f38"
   },
   {
     "id": "latte",
@@ -48,11 +48,11 @@
     "category": "coffee",
     "price": null,
     "image": "/images/menu/latte.jpg",
-    "imageAlt": "Latte dalam gelas kaca di atas meja",
+    "imageAlt": "Latte dengan latte art di atas piring",
     "availabilityStatus": "available",
-    "imageSource": "Wikimedia Commons",
-    "imageLicense": "CC0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Latte_in_glass_in_cincinnati_(Unsplash).jpg"
+    "imageSource": "Unsplash",
+    "imageLicense": "Unsplash License",
+    "sourceUrl": "https://unsplash.com/photos/1561882468-9110e03e0f78"
   },
   {
     "id": "americano",
@@ -61,11 +61,11 @@
     "category": "coffee",
     "price": null,
     "image": "/images/menu/americano.jpg",
-    "imageAlt": "Americano dalam cangkir kaca",
+    "imageAlt": "Americano (kopi hitam) dalam cangkir putih",
     "availabilityStatus": "available",
-    "imageSource": "Wikimedia Commons",
-    "imageLicense": "Public domain",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Espresso_Americano.jpeg"
+    "imageSource": "Unsplash",
+    "imageLicense": "Unsplash License",
+    "sourceUrl": "https://unsplash.com/photos/1532004491497-ba35c367d634"
   },
   {
     "id": "matcha-latte",
@@ -74,11 +74,11 @@
     "category": "non-coffee",
     "price": null,
     "image": "/images/menu/matcha.jpg",
-    "imageAlt": "Matcha latte hijau dalam gelas tinggi",
+    "imageAlt": "Matcha latte hijau dengan latte art",
     "availabilityStatus": "available",
-    "imageSource": "Wikimedia Commons",
-    "imageLicense": "CC BY-SA 4.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Matcha_latte_in_tall_glass.jpg"
+    "imageSource": "Unsplash",
+    "imageLicense": "Unsplash License",
+    "sourceUrl": "https://unsplash.com/photos/1536256263959-770b48d82b0a"
   },
   {
     "id": "thai-tea",
@@ -89,9 +89,9 @@
     "image": "/images/menu/thai-tea.jpg",
     "imageAlt": "Thai iced tea dalam gelas tinggi dengan es",
     "availabilityStatus": "available",
-    "imageSource": "Wikimedia Commons",
-    "imageLicense": "CC BY-SA 4.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thai_iced_tea_in_a_typical_tall_glass.jpg"
+    "imageSource": "Unsplash",
+    "imageLicense": "Unsplash License",
+    "sourceUrl": "https://unsplash.com/photos/a-glass-of-liquid-sitting-on-top-of-a-wooden-table-xp1JN3Ctgcg"
   },
   {
     "id": "susu-sultan-boba",
@@ -113,11 +113,11 @@
     "category": "non-coffee",
     "price": null,
     "image": "/images/menu/chocolate.jpg",
-    "imageAlt": "Cokelat panas dengan whipped cream di atasnya",
+    "imageAlt": "Cokelat panas dituang ke dalam cangkir putih",
     "availabilityStatus": "available",
-    "imageSource": "Wikimedia Commons",
-    "imageLicense": "CC BY-SA 4.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dark_Hot_Chocolate,_San_Churro_Leederville,_2026_(01).jpg"
+    "imageSource": "Unsplash",
+    "imageLicense": "Unsplash License",
+    "sourceUrl": "https://unsplash.com/photos/chocolate-coffee-pouring-in-white-mug-MjZq7A2RJxQ"
   },
   {
     "id": "butter-croissant",
@@ -126,11 +126,11 @@
     "category": "food",
     "price": null,
     "image": "/images/menu/croissant.jpg",
-    "imageAlt": "Croissant mentega di atas piring",
+    "imageAlt": "Dua croissant mentega kecokelatan",
     "availabilityStatus": "available",
-    "imageSource": "Wikimedia Commons",
-    "imageLicense": "CC0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Croissants_au_beurre_(18953292873).jpg"
+    "imageSource": "Unsplash",
+    "imageLicense": "Unsplash License",
+    "sourceUrl": "https://unsplash.com/photos/two-brown-croissants-m9pzwmxm2rk"
   },
   {
     "id": "pastry-set",
@@ -152,11 +152,11 @@
     "category": "food",
     "price": null,
     "image": "/images/menu/roti-cokelat.jpg",
-    "imageAlt": "Roti isi cokelat (pain au chocolat)",
+    "imageAlt": "Roti cokelat gelap dengan isian cokelat",
     "availabilityStatus": "available",
-    "imageSource": "Wikimedia Commons",
-    "imageLicense": "CC BY-SA 3.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pain_au_chocolat_Luc_Viatour.jpg"
+    "imageSource": "Unsplash",
+    "imageLicense": "Unsplash License",
+    "sourceUrl": "https://unsplash.com/photos/brown-bread-with-black-background-3JZZ8G1in5g"
   },
   {
     "id": "roti-susu-manis",
@@ -165,10 +165,10 @@
     "category": "food",
     "price": null,
     "image": "/images/menu/roti-susu.jpg",
-    "imageAlt": "Roti susu manis yang lembut",
+    "imageAlt": "Roti susu manis lembut di atas nampan kayu",
     "availabilityStatus": "available",
-    "imageSource": "Wikimedia Commons",
-    "imageLicense": "CC BY-SA 2.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Japanese_Milk_Bread.jpg"
+    "imageSource": "Unsplash",
+    "imageLicense": "Unsplash License",
+    "sourceUrl": "https://unsplash.com/photos/bread-on-brown-wooden-tray-yjWNJRwt8mc"
   }
 ]
