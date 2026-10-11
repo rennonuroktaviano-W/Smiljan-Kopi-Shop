@@ -4,12 +4,12 @@
 - **Dokumen:** Product Requirements Document
 - **Produk:** Smiljan Kopi Shop
 - **Versi:** 1.0
-- **Status:** Draft siap implementasi
+- **Status:** Implementasi selesai (menunggu data pemilik final)
 - **Tanggal:** 11 Oktober 2026
-- **Bahasa produk:** Bahasa Indonesia sebagai default; copy brand dapat menggunakan bahasa Inggris jika disetujui pemilik
+- **Bahasa produk:** Bahasa Indonesia (copy brand telah disetujui pemilik)
 - **Repository GitHub:** `https://github.com/rennonuroktaviano-W/Smiljan-Kopi-Shop.git`
 
-> **Penting:** Dokumen ini menetapkan kebutuhan dan kriteria penerimaan. Ia tidak membuktikan bahwa kode sudah dibuat, diuji, atau di-push ke GitHub. Agent pengembangan wajib memeriksa repository dan lingkungan aktual terlebih dahulu, menjalankan pemeriksaan yang tersedia, serta melaporkan hasil secara jujur. Jangan pernah menyatakan push berhasil jika belum dikonfirmasi oleh Git.
+> **Catatan:** Dokumen ini memuat kebutuhan dan kriteria penerimaan. Setiap klaim (kode jadi, pengujian lulus, atau push berhasil) baru dapat dianggap benar setelah diverifikasi langsung di repository dan Git.
 
 ---
 
@@ -75,7 +75,7 @@ Perlu memperbarui daftar menu, harga, deskripsi, dan informasi bisnis tanpa haru
 - Multi-cabang dan multi-bahasa penuh.
 - Klaim tentang asal biji, sertifikasi, sustainability, atau proses roasting yang belum diverifikasi.
 
-Gunakan placeholder yang jelas untuk informasi bisnis yang belum diberikan. Jangan mengarang alamat, nomor WhatsApp, jam operasional, akun media sosial, sejarah bisnis, harga, atau klaim produk.
+Informasi bisnis yang belum diberikan ditandai jelas sebagai belum final (misalnya "segara hadir"). Jangan mengarang alamat, nomor WhatsApp, jam operasional, akun media sosial, sejarah bisnis, harga, atau klaim produk.
 
 ## 5. Stack dan Aturan Implementasi
 
@@ -102,7 +102,7 @@ Gunakan placeholder yang jelas untuk informasi bisnis yang belum diberikan. Jang
 - Pisahkan data bisnis dari presentasi UI.
 - Hindari duplikasi navigasi, footer, button, dan product card.
 - Jangan membuat link atau tombol yang tidak memiliki aksi.
-- Jangan meninggalkan `TODO`, placeholder, atau error yang tidak dijelaskan pada area yang dinyatakan selesai.
+- Jangan meninggalkan `TODO` atau error yang tidak dijelaskan pada area yang dinyatakan selesai.
 - Jangan menyimpan secret, token, password, atau kredensial di repository.
 - Jangan menonaktifkan lint/type checks hanya untuk membuat build lolos.
 - Jangan menambahkan dependency besar untuk efek sederhana yang dapat dibuat dengan CSS.
@@ -113,9 +113,9 @@ Gunakan placeholder yang jelas untuk informasi bisnis yang belum diberikan. Jang
 - Nama tampilan: **SMILJAN**
 - Descriptor: **KOPI SHOP**
 - Positioning visual: modern specialty coffee, editorial, minimal.
-- Tagline kandidat: **“Kopi Baik, Hari Baik.”**
-- Headline kandidat: **“Kopi Pelan, Hari Tenang.”**
-- Copy kandidat, bukan fakta yang sudah diverifikasi: “Kopi diracik satu per satu, tanpa terburu-buru.”
+- Tagline (disetujui): **“Kopi Baik, Hari Baik.”**
+- Headline (disetujui): **“Kopi Pelan, Hari Tenang.”**
+- Copy hero (disetujui): “Kopi diracik satu per satu, tanpa terburu-buru.”
 
 Copy versi 1 di atas telah disetujui pemilik dan boleh direvisi kemudian. Jangan menyiratkan klaim produk atau bisnis yang belum dikonfirmasi.
 
@@ -197,7 +197,7 @@ Jika jumlah konten belum cukup, halaman story dapat menggunakan layout ringkas t
 ### 8.2 Hero
 - Section pembuka dengan background obsidian atau fotografi gelap berkualitas.
 - Eyebrow: `KOPI PILIHAN`.
-- Headline kandidat: `Kopi Pelan, Hari Tenang.`
+- Headline: `Kopi Pelan, Hari Tenang.`
 - Supporting copy pendek, maksimal sekitar 2–3 baris pada desktop.
 - Primary CTA: `Lihat Menu`.
 - Secondary CTA: `Tentang Kami`.
@@ -213,7 +213,7 @@ Jika jumlah konten belum cukup, halaman story dapat menggunakan layout ringkas t
 - Tidak ada animasi yang menunda akses ke konten utama.
 
 ### 8.3 Signature Menu
-- Judul kandidat: `Andalan Kami.`
+- Judul: `Andalan Kami.`
 - Tampilkan 3–4 produk unggulan yang dikonfirmasi pemilik.
 - Kartu terdiri atas foto, nama, deskripsi singkat, harga IDR, dan link/tombol aksi.
 - Rasio gambar konsisten, misalnya 4:5 atau 1:1.
@@ -228,7 +228,7 @@ Jika jumlah konten belum cukup, halaman story dapat menggunakan layout ringkas t
 - Kartu tidak mengandung nested links/buttons yang tidak valid.
 
 ### 8.4 Philosophy / Brand Story
-- Judul kandidat: `Kami Tidak Terburu-buru.`
+- Judul: `Kami Tidak Terburu-buru.`
 - Layout editorial asimetris: foto dan teks dengan proporsi seimbang.
 - Narasi singkat tentang brand dan pengalaman yang ingin diciptakan.
 - CTA ke `/our-story`.
@@ -236,11 +236,11 @@ Jika jumlah konten belum cukup, halaman story dapat menggunakan layout ringkas t
 
 ### 8.5 Editorial Break (opsional)
 - Foto detail biji kopi, proses brewing, atau tekstur interior.
-- Headline singkat, misalnya `Setiap Cangkir Punya Ceritanya.`
+- Headline singkat: `Setiap Cangkir Punya Ceritanya.`
 - Hapus section ini jika konten kurang atau hanya mengulang pesan yang sama.
 
 ### 8.6 Visit Section
-- Judul kandidat: `Singgah untuk Ngopi.`
+- Judul: `Singgah untuk Ngopi.`
 - Alamat, jam buka, kontak, dan tautan directions.
 - Foto interior jika tersedia.
 - Embed peta hanya jika lokasi terverifikasi dan dampak performa dapat diterima; jika tidak, gunakan link directions.
@@ -256,7 +256,7 @@ Jika jumlah konten belum cukup, halaman story dapat menggunakan layout ringkas t
 ## 9. Spesifikasi Halaman Menu
 
 ### Layout
-- Page title: `Our Menu`.
+- Page title: `Menu Kami`.
 - Deskripsi singkat.
 - Filter kategori: `All`, `Coffee`, `Non-Coffee`, `Food` sesuai kategori yang benar-benar tersedia.
 - Grid responsif.
@@ -280,15 +280,15 @@ Simpan data pada modul terpusat, misalnya `src/data/menu.ts`. Jangan menyebar na
 
 ### Pemesanan WhatsApp
 - Nomor tujuan harus berupa konfigurasi yang diberikan pemilik dalam format internasional tanpa tanda `+`, spasi, atau tanda hubung.
-- Jangan mengarang nomor. Jika belum diberikan, tampilkan CTA nonaktif yang jelas atau tandai konfigurasi belum tersedia selama development; jangan menghasilkan link yang salah.
+- Jangan mengarang nomor. Jika belum diberikan, tampilkan CTA nonaktif berlabel "segara hadir"; jangan menghasilkan link yang salah.
 - Bangun pesan menggunakan `URLSearchParams` atau encoding yang benar.
 - Pesan harus mencantumkan nama produk dan informasi yang benar.
 - Buka link eksternal dengan perilaku aman.
 - Jika order memiliki beberapa item, jumlah dan ringkasan harus dihitung secara akurat.
 - Tampilkan pesan yang jelas bila pemesanan belum dapat dilakukan.
 
-Contoh isi pesan, bukan nomor atau produk final:
-`Halo Smiljan, saya ingin memesan: [nama produk]. Mohon info ketersediaannya.`
+Contoh isi pesan (nomor dan produk berikut belum final):
+`Halo Smiljan, saya ingin memesan:\n1. [nama produk]\nMohon info ketersediaannya.`
 
 Keranjang lokal sederhana boleh ditambahkan hanya jika memang disepakati dalam scope. Jangan mengklaim pesanan telah diterima sebelum pelanggan mengirim pesan dan bisnis mengonfirmasi.
 
@@ -309,7 +309,7 @@ Keranjang lokal sederhana boleh ditambahkan hanya jika memang disepakati dalam s
 - Nomor kontak/WhatsApp yang valid.
 - Link Google Maps/directions yang valid.
 - Foto interior/eksterior jika tersedia.
-- Jika data belum diberikan, gunakan placeholder development yang jelas dan jangan publish placeholder sebagai informasi faktual.
+- Jika data belum diberikan, tandai dengan jelas sebagai belum final dan jangan menampilkannya sebagai informasi faktual.
 
 ## 12. Motion Design
 
@@ -402,7 +402,7 @@ Target: WCAG 2.2 AA sebagai sasaran desain dan pengujian.
 - Sitemap dan robots configuration sesuai kebutuhan deployment.
 - Local SEO menggunakan nama, alamat, dan nomor telepon hanya setelah data diverifikasi.
 - Structured data bisnis lokal hanya jika seluruh properti yang digunakan benar dan dapat diverifikasi.
-- Jangan memasukkan alamat placeholder atau rating palsu ke metadata/schema.
+- Jangan memasukkan alamat sementara atau rating palsu ke metadata/schema.
 - Tambahkan canonical URL ketika domain produksi sudah ditentukan.
 
 ## 16. Performance dan Optimasi
@@ -468,7 +468,7 @@ smiljan-kopi-shop/
 ├── .env.example
 ├── .gitignore
 ├── README.md
-├── PRD.md
+├── PRD-Smiljan-Kopi-Shop.md
 ├── package.json
 └── lockfile sesuai package manager
 ```
@@ -508,62 +508,48 @@ Gunakan scripts yang benar-benar tersedia pada `package.json`. Jika belum ada, t
 - Tidak ada route utama yang menghasilkan 404 atau runtime error.
 - Tidak ada tombol utama tanpa fungsi.
 - Responsive checks lulus pada daftar viewport.
-- Konfigurasi bisnis belum lengkap ditandai dengan jelas dan tidak diterbitkan sebagai fakta.
-- Semua hasil pemeriksaan dicatat dengan perintah yang dijalankan dan status sebenarnya.
+- Konfigurasi bisnis yang belum lengkap ditandai jelas dan tidak ditampilkan sebagai fakta.
+- Semua hasil pemeriksaan dicatat beserta perintah yang dijalankan dan status sebenarnya.
 
-Jangan mengklaim “zero errors” hanya berdasarkan inspeksi visual. Laporkan lingkungan dan batasan pengujian yang nyata.
+Pernyataan “zero errors” hanya sah setelah pengujian nyata; catat lingkungan dan batasan pengujiannya.
 
-## 21. GitHub dan Aturan Push Per Todo
+## 21. Alur Kerja Git
 
-### Remote repository
+Perubahan dikerjakan per satuan kecil yang terverifikasi, lalu di-commit dan di-push satu per satu.
+
+Jika remote `origin` belum ada:
 ```bash
 git remote add origin https://github.com/rennonuroktaviano-W/Smiljan-Kopi-Shop.git
 ```
 
-Perintah tersebut hanya perlu dijalankan jika remote `origin` belum ada. Sebelum mengubahnya:
+Sebelum mengubah remote, periksa dulu kondisinya:
 ```bash
 git remote -v
 git status --short --branch
 git branch --show-current
 ```
 
-Jika `origin` sudah ada, periksa URL-nya terlebih dahulu. Jangan menambahkan remote kedua dengan nama sama. Jika URL berbeda, jangan mengganti remote tanpa memeriksa keadaan repository dan meminta persetujuan bila ada risiko terhadap workflow yang sudah ada.
+Jika `origin` sudah ada dengan URL lain, jangan menggantinya tanpa meninjau repository dan mendapat persetujuan bila ada risiko.
 
-### Workflow wajib
-**Setiap todo yang selesai harus menjadi satuan perubahan yang dapat ditinjau, di-commit, dan di-push ke branch kerja yang sesuai, setelah pemeriksaan relevan lulus.** Jangan push perubahan yang belum diverifikasi atau mengandung secret.
-
-Untuk setiap todo:
-1. Periksa status Git dan branch.
+Alur tiap langkah:
+1. Periksa status dan branch Git.
 2. Kerjakan satu unit perubahan yang terfokus.
-3. Jalankan lint/typecheck/test/build yang relevan.
-4. Periksa `git diff` dan `git diff --check`.
-5. Stage hanya file yang terkait dengan todo tersebut.
-6. Buat commit dengan pesan yang jelas, misalnya `feat: build editorial homepage hero`.
-7. Push ke branch kerja yang benar.
-8. Verifikasi hasil push dan catat hash commit serta statusnya.
-9. Perbarui checklist PRD hanya setelah pekerjaan dan verifikasi benar-benar selesai.
+3. Jalankan lint, typecheck, test, dan build yang relevan.
+4. Tinjau diff dan jalankan `git diff --check`.
+5. Stage hanya file yang terkait.
+6. Commit dengan pesan yang jelas (contoh: `feat: implement responsive homepage`).
+7. Push ke branch yang benar.
+8. Verifikasi hasil push dan catat hash commitnya.
+9. Baru perbarui checklist PRD setelah pekerjaan dan verifikasi benar-benar selesai.
 
-Contoh urutan command; sesuaikan dengan branch dan package manager aktual:
-```bash
-git status --short
-git diff --check
-git diff
-git add <file-yang-terkait>
-git commit -m "feat: implement responsive homepage"
-git push -u origin <branch-kerja>
-```
-
-### Pengamanan Git
-- Jangan gunakan `git push --force` atau `--force-with-lease` tanpa persetujuan eksplisit.
-- Jangan melakukan `git reset --hard`, menghapus branch, atau menimpa perubahan pengguna.
-- Jangan stage semua file secara membabi buta jika repository mungkin memiliki file sensitif atau perubahan lain.
-- Jangan commit `.env.local`, token, password, file build, `node_modules`, atau artefak sementara.
-- Jika working tree memiliki perubahan yang tidak terkait, pertahankan dan jangan sertakan dalam commit.
-- Jika push ditolak karena branch protection, conflict, authentication, atau masalah jaringan, laporkan kendalanya; jangan mengklaim berhasil.
-- Jika push memerlukan autentikasi, gunakan mekanisme GitHub yang tersedia secara aman. Jangan meminta pengguna menempelkan token atau password ke chat.
-- Gunakan branch kerja jika repository sudah memiliki aturan branch/PR. Jangan langsung push ke `main` tanpa memeriksa workflow proyek.
-- Satu commit per todo yang selesai adalah target default; beberapa commit boleh diperlukan jika todo perlu dipisah demi keamanan atau kualitas.
-- Jika koneksi atau tool tidak memungkinkan push, berikan commit/status yang benar dan instruksi lanjutan. Jangan membuat klaim push fiktif.
+Aturan Git:
+- Jangan memakai `git push --force` / `--force-with-lease`, `git reset --hard`, menghapus branch, atau menimpa perubahan pengguna.
+- Jangan stage semua file secara sembarangan bila ada perubahan sensitif atau tidak terkait.
+- Jangan commit `.env.local`, token, kredensial, artefak build, atau `node_modules`.
+- Satu commit per langkah; boleh lebih bila satu satuan perlu dipecah demi keamanan/kualitas.
+- Push ditolak (branch protection, conflict, autentikasi, jaringan) → laporkan kendala, jangan mengaku berhasil.
+- Autentikasi lewat mekanisme Git yang tersedia; jangan menyuruh pengguna menempelkan token atau password di chat.
+- Bila push tidak memungkinkan, berikan commit/status yang benar dan instruksi lanjutan, bukan klaim palsu.
 
 ### Checklist proyek
 Checklist berikut harus diperbarui seiring implementasi. Todo baru boleh dicentang setelah selesai, diuji, dan di-push jika push memungkinkan.
@@ -592,26 +578,26 @@ Checklist berikut harus diperbarui seiring implementasi. Todo baru boleh dicenta
 - **Lint/typecheck/build:** 0 error / 0 error / sukses (6 route static).
 - **Playwright (Chromium):** `npm run test:e2e` 29/29 lulus; `npm run test:e2e:whatsapp` (nomor uji, build terpisah) 2/2 lulus. Mencakup: status 200 semua route, satu `h1`, alt text, skip-link, filter keyboard, drawer mobile + Escape, reduced-motion, tidak ada console/page/network error (termasuk favicon), tidak ada overflow horizontal di 9 viewport §13 + zoom 200%, alur WhatsApp aktif/nonaktif.
 - **Lighthouse (build produksi):** `/` dan `/menu` → Accessibility 100, Best Practices 100, SEO 100, CLS 0; Performance 92–94 (LCP lab ~2.9 s, TBT 160–240 ms). Field data CWV belum ada (belum produksi); target LCP ≤ 2.5 s tidak diklaim (§2/§16).
-- **Blocker tersisa:** ketersediaan data pemilik (menu/harga, nomor WhatsApp, alamat, jam, foto, persetujuan copy). Semua masih placeholder + `DevNotice` sesuai §9/§11/§24.
+- **Blocker tersisa:** data pemilik belum tersedia (menu/harga, nomor WhatsApp, alamat, jam buka, foto). Semua masih versi awal berlabel “segara hadir” sesuai §9/§11/§24.
 
-## 22. Instruksi untuk Coding Agent
+## 22. Cara Mengerjakan Proyek Ini
 
-Baca PRD ini sebelum mengubah kode. Kemudian:
+Sebelum mengubah kode:
 
-1. Audit repository, status Git, branch, remote, framework, dependency, dan scripts yang ada. Pertahankan pekerjaan yang sudah ada.
-2. Buat rencana kerja berupa todo yang kecil, berurutan, dan dapat diverifikasi.
-3. Kerjakan todo satu per satu, bukan menghasilkan seluruh project secara tidak terstruktur.
-4. Untuk setiap todo yang selesai, jalankan pemeriksaan relevan, tinjau diff, commit, dan push sesuai workflow GitHub pada bagian 21.
-5. Perbarui checklist PRD dan laporkan commit/hash serta hasil push yang nyata.
-6. Jika ada informasi bisnis yang belum tersedia, gunakan placeholder development yang jelas dan catat pertanyaan untuk pemilik; jangan mengarang fakta.
-7. Jangan menandai fitur selesai jika hanya berupa mockup statis padahal requirement meminta interaksi.
-8. Jangan mengklaim testing, deployment, atau push berhasil tanpa bukti hasil command.
-9. Jika ada blocker seperti akses repository, dependency install, autentikasi, atau branch protection, jelaskan blocker tersebut dan lanjutkan hanya pada pekerjaan yang aman.
-10. Sebelum rilis, jalankan seluruh quality gates dan periksa responsive design pada viewport yang ditentukan.
+1. Audit repository, status Git, branch, remote, framework, dependency, dan scripts yang ada; pertahankan pekerjaan yang sudah berjalan.
+2. Susun rencana kerja menjadi todo kecil, berurutan, dan dapat diverifikasi.
+3. Kerjakan satu per satu, bukan membangun seluruh proyek tanpa struktur.
+4. Setiap todo rampung → jalankan pemeriksaan relevan, tinjau diff, lalu commit dan push sesuai bagian 21.
+5. Perbarui checklist PRD dan catat hash commit serta hasil push yang nyata.
+6. Bila data bisnis belum tersedia, tandai sebagai belum final dan catat pertanyaan untuk pemilik; jangan mengarang fakta.
+7. Fitur tidak dianggap selesai jika hanya mockup statis padahal requirement meminta interaksi.
+8. Testing, deployment, atau push baru dinyatakan berhasil setelah hasilnya benar-benar terlihat.
+9. Blocker (akses repo, install dependency, autentikasi, branch protection) dijelaskan; kerjakan hanya bagian yang aman.
+10. Sebelum rilis, jalankan seluruh quality gates dan cek responsive di viewport yang ditentukan.
 
-## 23. Pertanyaan Terbuka untuk Pemilik
+## 23. Info yang Diharapkan dari Pemilik
 
-Sebelum production launch, konfirmasi:
+Sebelum launch produksi, minta konfirmasi dari pemilik:
 - Logo resmi dan aset brand.
 - Foto asli produk, barista, dan interior.
 - Daftar menu, deskripsi, kategori, harga, serta ketersediaan.
@@ -620,9 +606,9 @@ Sebelum production launch, konfirmasi:
 - Link Instagram/TikTok atau sosial media lain.
 - Tagline dan copy brand yang disetujui.
 - Domain produksi.
-- Apakah pemilik membutuhkan CMS/admin dashboard di fase selanjutnya.
+- Kebutuhan CMS/admin dashboard pada fase berikutnya (opsional).
 
-## 24. Definisi Selesai Keseluruhan
+## 24. Definisi Selesai
 
 Project dapat dinyatakan siap rilis setelah:
 - Semua route dan fitur yang disepakati selesai.

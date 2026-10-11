@@ -58,7 +58,7 @@ npm run start -- --port 3110
 npx lighthouse http://localhost:3110/ --only-categories=performance,accessibility,best-practices,seo --output=json --chrome-path="<path-ke-chrome.exe>"
 ```
 
-Satu-satunya blocker rilis tersisa adalah **ketersediaan data pemilik** (menu/harga asli, nomor WhatsApp, alamat, jam buka, foto) — semua masih berstatus placeholder dengan `DevNotice` sesuai PRD §9/§11/§24.
+Satu-satunya blocker rilis tersisa: **data pemilik belum tersedia** (menu/harga asli, nomor WhatsApp, alamat, jam buka, foto). Sebelum itu, halaman menampilkan pesan "segara hadir" sesuai PRD §9/§11/§24.
 
 ## Struktur Penting
 
@@ -83,17 +83,17 @@ Salin `.env.example` menjadi `.env.local` lalu isi nilai sesuai bisnis:
 cp .env.example .env.local
 ```
 
-Variabel `NEXT_PUBLIC_*` dibaca oleh `src/data/site.ts`. Selama data belum diverifikasi pemilik:
+Variabel `NEXT_PUBLIC_*` dibaca oleh `src/data/site.ts`. Selama data bisnis belum final:
 
 - CTA WhatsApp/pemesanan tampil sebagai tombol nonaktif dengan keterangan jelas (tidak mengirim link `wa.me` tanpa nomor).
-- Halaman menu/kunjungan menampilkan catatan `DevNotice` bahwa data masih placeholder.
-- `NEXT_PUBLIC_BUSINESS_INFO_READY=true` hanya setelah seluruh data bisnis diverifikasi.
+- Halaman menu/kunjungan menampilkan pesan "segara hadir" selama data belum final.
+- `NEXT_PUBLIC_BUSINESS_INFO_READY=true` hanya setelah seluruh data bisnis final dan terverifikasi.
 
 Jangan commit `.env.local`. Hanya `.env.example` yang boleh masuk repository.
 
-## Placeholder Visual
+## Aset Gambar Sementara
 
-Karena foto asli belum tersedia, `public/images/` berisi ilustrasi SVG bernuansa brand sebagai placeholder. Ganti dengan aset asli (logo, foto produk, barista, interior) sebelum production launch.
+Selama foto asli belum tersedia, `public/images/` diisi ilustrasi SVG bernuansa brand. Ganti dengan aset asli (logo, foto produk, barista, interior) sebelum launch produksi.
 
 ## Deployment
 
