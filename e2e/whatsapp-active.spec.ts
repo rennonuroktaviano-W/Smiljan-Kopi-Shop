@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-/** Alur WhatsApp AKTIF dijalankan pada build terpisah dengan nomor uji (§9/§20). */
+/** Alur WhatsApp AKTIF dijalankan pada build terpisah dengan nomor uji (PRD §9). */
 test.describe("whatsapp AKTIF (nomor uji) (§9)", () => {
   test("/menu: CTA order membuka wa.me dengan teks terenkode yang benar", async ({
     page,

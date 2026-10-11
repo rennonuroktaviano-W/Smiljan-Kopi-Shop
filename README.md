@@ -29,7 +29,7 @@ npm run test:e2e:whatsapp  # Playwright: alur WhatsApp AKTIF (build terpisah + n
 
 Perintah dijalankan pada **11 Oktober 2026** (Windows, Node 22, Chromium via Playwright).
 
-### Quality gates
+### Lint, typecheck, dan build
 
 | Gate | Hasil |
 |---|---|
@@ -58,7 +58,7 @@ npm run start -- --port 3110
 npx lighthouse http://localhost:3110/ --only-categories=performance,accessibility,best-practices,seo --output=json --chrome-path="<path-ke-chrome.exe>"
 ```
 
-Satu-satunya blocker rilis tersisa: **data pemilik belum tersedia** (menu/harga asli, nomor WhatsApp, alamat, jam buka, foto). Sebelum itu, halaman menampilkan pesan "segara hadir" sesuai PRD §9/§11/§24.
+Satu-satunya blocker rilis tersisa: **data pemilik belum tersedia** (menu/harga asli, nomor WhatsApp, alamat, jam buka, foto). Sebelum itu, halaman menampilkan pesan "segara hadir" sesuai PRD §9/§11/§19.
 
 ## Struktur Penting
 

@@ -37,7 +37,7 @@ function assertCleanPage(hooked: {
   expect(hooked.failedRequests, "failed/4xx+ requests").toEqual([]);
 }
 
-test.describe("smoke routes (§20)", () => {
+test.describe("smoke routes", () => {
   for (const route of htmlRoutes) {
     test(`GET ${route} → 200, tanpa errors, satu h1, favicon ok`, async ({
       page,
