@@ -6,8 +6,12 @@ import ExternalLink from "@/components/ui/ExternalLink";
 import DisabledCta from "@/components/ui/DisabledCta";
 
 function OrderAction({ item }: { item: MenuItem }) {
-  if (!item.available) {
+  if (item.availabilityStatus === "unavailable") {
     return <DisabledCta label="Sementara kosong" />;
+  }
+
+  if (item.availabilityStatus === "coming-soon") {
+    return <DisabledCta label="Segera hadir" />;
   }
 
   const orderHref = buildWhatsAppOrderLink([{ name: item.name }]);
@@ -35,22 +39,35 @@ export default function ProductCard({
   heading?: "h2" | "h3";
 }) {
   const Heading = heading;
+  const available = item.availabilityStatus === "available";
 
   return (
     <article className="group flex flex-col">
       <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-white">
-        <ImageWithFallback
-          src={item.image}
-          alt={item.imageAlt}
-          fill
-          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 100vw"
-          className={`object-cover transition-transform duration-300 ease-[var(--ease-editorial)] group-hover:scale-[1.04] ${
-            item.available ? "" : "opacity-60"
-          }`}
-        />
-        {!item.available ? (
+        {item.image ? (
+          <ImageWithFallback
+            src={item.image}
+            alt={item.imageAlt}
+            fill
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 100vw"
+            className={`object-cover transition-transform duration-300 ease-[var(--ease-editorial)] group-hover:scale-[1.04] ${
+              available ? "" : "opacity-60"
+            }`}
+          />
+        ) : (
+          <div
+            role="img"
+            aria-label={`Foto ${item.name} belum tersedia`}
+            className={`flex h-full w-full items-center justify-center bg-stone/30 p-6 text-center text-label font-medium uppercase tracking-wider text-graphite ${
+              available ? "" : "opacity-60"
+            }`}
+          >
+            Foto menyusul
+          </div>
+        )}
+        {!available ? (
           <span className="absolute left-3 top-3 rounded-full bg-obsidian/85 px-3 py-1 text-label font-medium uppercase tracking-wider text-ivory">
-            Kosong
+            {item.availabilityStatus === "unavailable" ? "Kosong" : "Segera"}
           </span>
         ) : null}
       </div>
@@ -58,8 +75,15 @@ export default function ProductCard({
       <div className="flex flex-col gap-2 pt-5">
         <div className="flex items-baseline justify-between gap-4">
           <Heading className="font-display text-xl text-obsidian">{item.name}</Heading>
-          <p className="shrink-0 text-price font-semibold text-obsidian">
-            {formatCurrency(item.price)}
+          <p
+            className="shrink-0 text-price font-semibold text-obsidian"
+            aria-label={
+              item.price !== null
+                ? `Harga ${item.name}: ${formatCurrency(item.price)}`
+                : `Harga ${item.name} menyusul`
+            }
+          >
+            {item.price !== null ? formatCurrency(item.price) : "Harga menyusul"}
           </p>
         </div>
         <p className="line-clamp-2 text-sm leading-relaxed text-graphite">

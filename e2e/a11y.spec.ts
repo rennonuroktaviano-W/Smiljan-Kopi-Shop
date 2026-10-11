@@ -53,7 +53,7 @@ test.describe("accessibility basics (§14)", () => {
     await expect(allButton).toHaveAttribute("aria-pressed", "false");
 
     const cards = page.locator("article");
-    await expect(cards).toHaveCount(6);
+    await expect(cards).toHaveCount(5);
   });
 
   test("drawer mobile: buka/Tutup, Escape, dan focus management (§8.1/§14)", async ({

@@ -31,8 +31,8 @@ export default function MenuPage() {
 
         <div className="mt-6">
           <DevNotice>
-            Menu di bawah ini sedang kami susun ulang. Harga dan ketersediaan
-            akhir menyusul.
+            Menu sedang kami susun ulang. Harga resmi dan ketersediaan akhir
+            menyusul — silakan tanya melalui WhatsApp untuk info terbaru.
           </DevNotice>
         </div>
 

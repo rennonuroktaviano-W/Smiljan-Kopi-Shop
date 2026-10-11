@@ -21,6 +21,7 @@ npm run build           # production build
 npm run start           # serve production build
 npm run lint            # ESLint
 npm run typecheck       # TypeScript type check
+npm run validate:menu   # validasi katalog menu & aset foto (menu.json)
 npm run test:e2e        # Playwright: routes/console, matrix viewport, a11y, WhatsApp nonaktif
 npm run test:e2e:whatsapp  # Playwright: alur WhatsApp AKTIF (build terpisah + nomor uji)
 ```
@@ -35,6 +36,7 @@ Perintah dijalankan pada **11 Oktober 2026** (Windows, Node 22, Chromium via Pla
 |---|---|
 | `npm run lint` | 0 error, 0 warning |
 | `npm run typecheck` | 0 error |
+| `npm run validate:menu` | 13 item valid, 13 aset foto unik ada di `public/` |
 | `npm run build` | sukses, semua route static (6 : `/`, `/menu`, `/our-story`, `/visit`, `/sitemap.xml`, `/robots.txt`) |
 
 ### Playwright (Chromium)
@@ -70,7 +72,7 @@ src/
     menu/         # ProductCard, MenuGrid (filter kategori client-side)
     layout/       # Header (transparan, drawer mobile), Footer, Container
     ui/           # CtaLink, ExternalLink, DisabledCta, Reveal, SectionHeading, Logo, DevNotice
-  data/           # site.ts (konfigurasi bisnis dari env), menu.ts (data produk)
+  data/           # site.ts (konfigurasi bisnis dari env), menu.ts + menu.json (katalog produk)
   lib/            # whatsapp.ts (link pemesanan), format-currency.ts (IDR)
   types/          # menu.ts (kategori, item)
 ```
@@ -93,7 +95,21 @@ Jangan commit `.env.local`. Hanya `.env.example` yang boleh masuk repository.
 
 ## Foto Contoh untuk Demo
 
-Foto di `public/images/` adalah contoh dari Unsplash (dark editorial, satu set utuh) untuk kebutuhan demo client. Ganti dengan foto asli milik Smiljan (logo, produk, barista, interior) sebelum rilis produksi. Teks alternatif (alt) sudah ditulis deskriptif agar mudah disesuaikan. `public/images/menu/coffee-beans.svg` dipertahankan sebagai gambar fallback ketika sebuah foto gagal dimuat.
+Foto di `public/images/` adalah contoh dari Unsplash & Wikimedia Commons untuk kebutuhan demo client; ganti dengan foto asli milik Smiljan (logo, produk, barista, interior) sebelum rilis produksi. Teks alternatif (alt) sudah ditulis deskriptif agar mudah disesuaikan. `public/images/menu/coffee-beans.svg` dipertahankan sebagai gambar fallback ketika sebuah foto gagal dimuat.
+
+### Katalog menu — single source of truth
+
+Katalog menu ada di **`src/data/menu.json`**. Setiap item memuat:
+
+- `id`, `name`, `category` (`coffee` | `non-coffee` | `food`), `description`
+- `price` — **`null` berarti harga resmi belum ditentukan** dan UI menampilkan "Harga menyusul". Jangan memasukkan harga tebakan.
+- `image`, `imageAlt`
+- `availabilityStatus` — `available` | `unavailable` | `coming-soon`
+- `imageSource`, `imageLicense`, `sourceUrl` — atribusi foto agar bisa diverifikasi.
+
+Validasi data & aset: `npm run validate:menu` mengecek field wajib, id unik, kategori/status valid, `price` beralasan (null atau angka ≥ 0), file gambar benar-benar ada di `public/`, dan tak ada foto yang dipakai ulang antar produk. Nama/status item diverifikasi dari berita 2026 yang mengutip Instagram resmi @kopikenangan.id, mis. [Daftar Promo Kopi Kenangan Juli (Kontan/Moms Money)](https://momsmoney.kontan.co.id/news/daftar-promo-kopi-kenangan-juli-minuman-kue-mulai-rp-19-ribu) — item yang menegaskan Kopi Kenangan Mantan, Americano, dan Roti Cokelat Klasik tersedia.
+
+Catatan: harga seluruh item Smiljan sengaja `null` ("Harga menyusul") karena harga resmi belum diterbitkan; harga Kopi Kenangan tidak digunakan sebagai harga Smiljan. Situs ini adalah milik Smiljan dan tidak berafiliasi dengan Kopi Kenangan.
 
 ## Deployment
 
