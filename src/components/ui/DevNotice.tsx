@@ -9,7 +9,7 @@ export default function DevNotice({ children }: { children: React.ReactNode }) {
 
   return (
     <p className="rounded-sm border border-stone bg-white/60 px-4 py-3 text-sm text-graphite">
-      <span className="font-semibold uppercase tracking-wider text-olive">
+      <span className="font-semibold uppercase tracking-wider text-olive-deep">
         Data placeholder&nbsp;—&nbsp;
       </span>
       {children}

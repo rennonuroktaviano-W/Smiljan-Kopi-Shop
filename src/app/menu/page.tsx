@@ -17,7 +17,7 @@ export default function MenuPage() {
       <Container>
         <Reveal>
           <div className="max-w-2xl">
-            <p className="text-label font-semibold uppercase tracking-[0.3em] text-olive">
+            <p className="text-label font-semibold uppercase tracking-[0.3em] text-olive-deep">
               Menu
             </p>
             <h1 className="mt-4 font-display text-section text-obsidian">

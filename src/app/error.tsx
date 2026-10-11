@@ -12,7 +12,7 @@ export default function Error({
     <section className="flex min-h-svh items-center bg-ivory pb-16 pt-32">
       <Container>
         <div className="max-w-xl">
-          <p className="text-label font-semibold uppercase tracking-[0.3em] text-olive">
+          <p className="text-label font-semibold uppercase tracking-[0.3em] text-olive-deep">
             Error
           </p>
           <h1 className="mt-4 font-display text-section text-obsidian">

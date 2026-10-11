@@ -14,7 +14,7 @@ function InfoRow({
 }) {
   return (
     <div className="border-t border-stone pt-4">
-      <dt className="text-label font-semibold uppercase tracking-[0.22em] text-olive">
+      <dt className="text-label font-semibold uppercase tracking-[0.22em] text-olive-deep">
         {label}
       </dt>
       <dd className="mt-2 text-body text-graphite">{children}</dd>
@@ -44,7 +44,7 @@ export default function VisitSection() {
 
           <Reveal delay={120} className="order-1 lg:order-2 lg:col-span-6">
             <div className="lg:pl-10">
-              <p className="text-label font-semibold uppercase tracking-[0.3em] text-olive">
+              <p className="text-label font-semibold uppercase tracking-[0.3em] text-olive-deep">
                 Visit
               </p>
               <h2 className="mt-4 font-display text-section text-obsidian">

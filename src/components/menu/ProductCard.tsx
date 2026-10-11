@@ -27,7 +27,15 @@ function OrderAction({ item }: { item: MenuItem }) {
   );
 }
 
-export default function ProductCard({ item }: { item: MenuItem }) {
+export default function ProductCard({
+  item,
+  heading = "h3",
+}: {
+  item: MenuItem;
+  heading?: "h2" | "h3";
+}) {
+  const Heading = heading;
+
   return (
     <article className="group flex flex-col">
       <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-white">
@@ -49,7 +57,7 @@ export default function ProductCard({ item }: { item: MenuItem }) {
 
       <div className="flex flex-col gap-2 pt-5">
         <div className="flex items-baseline justify-between gap-4">
-          <h3 className="font-display text-xl text-obsidian">{item.name}</h3>
+          <Heading className="font-display text-xl text-obsidian">{item.name}</Heading>
           <p className="shrink-0 text-price font-semibold text-obsidian">
             {formatCurrency(item.price)}
           </p>

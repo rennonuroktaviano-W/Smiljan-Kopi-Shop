@@ -33,7 +33,7 @@ export default function OurStoryPage() {
         <Container>
           <Reveal>
             <div className="max-w-3xl">
-              <p className="text-label font-semibold uppercase tracking-[0.3em] text-olive">
+              <p className="text-label font-semibold uppercase tracking-[0.3em] text-olive-deep">
                 Brand Story
               </p>
               <h1 className="mt-4 font-display text-section text-obsidian">

@@ -12,7 +12,6 @@ export default function Logo({ tone = "dark", className = "" }: LogoProps) {
     <Link
       href="/"
       className={`group inline-flex flex-col leading-none ${className}`}
-      aria-label={`${siteConfig.name} ${siteConfig.descriptor} - Beranda`}
     >
       <span
         className={`font-display text-xl font-semibold tracking-[0.22em] ${

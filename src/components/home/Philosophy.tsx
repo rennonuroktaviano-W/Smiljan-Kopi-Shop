@@ -10,7 +10,7 @@ export default function Philosophy() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
             <div className="max-w-md">
-              <p className="text-label font-semibold uppercase tracking-[0.3em] text-olive">
+              <p className="text-label font-semibold uppercase tracking-[0.3em] text-olive-deep">
                 Philosophy
               </p>
               <h2 className="mt-4 font-display text-section text-obsidian">

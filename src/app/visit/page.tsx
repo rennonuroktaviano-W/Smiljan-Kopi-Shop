@@ -24,7 +24,7 @@ function InfoRow({
 }) {
   return (
     <div className="border-t border-stone pt-4">
-      <dt className="text-label font-semibold uppercase tracking-[0.22em] text-olive">
+      <dt className="text-label font-semibold uppercase tracking-[0.22em] text-olive-deep">
         {label}
       </dt>
       <dd className="mt-2 text-body text-graphite">{children}</dd>
@@ -42,7 +42,7 @@ export default function VisitPage() {
       <Container>
         <Reveal>
           <div className="max-w-2xl">
-            <p className="text-label font-semibold uppercase tracking-[0.3em] text-olive">
+            <p className="text-label font-semibold uppercase tracking-[0.3em] text-olive-deep">
               Visit
             </p>
             <h1 className="mt-4 font-display text-section text-obsidian">

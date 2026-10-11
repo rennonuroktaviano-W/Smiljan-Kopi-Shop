@@ -29,7 +29,7 @@ export default function SectionHeading({
       {eyebrow ? (
         <p
           className={`text-label font-semibold uppercase tracking-[0.3em] ${
-            isLight ? "text-fog" : "text-olive"
+            isLight ? "text-fog" : "text-olive-deep"
           }`}
         >
           {eyebrow}
