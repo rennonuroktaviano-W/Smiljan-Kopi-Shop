@@ -6,7 +6,7 @@ export default function EditorialBreak() {
   return (
     <section className="relative isolate flex min-h-[70vh] items-center overflow-hidden bg-obsidian">
       <ImageWithFallback
-        src="/images/story/barista.svg"
+        src="/images/story/editorial.jpg"
         alt=""
         fill
         sizes="100vw"

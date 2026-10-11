@@ -77,8 +77,8 @@ export default function OurStoryPage() {
             <Reveal delay={120} className="lg:col-span-7">
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-obsidian">
                 <ImageWithFallback
-                  src="/images/story/barista.svg"
-                  alt="Siluet barista menyiapkan seduhan"
+                  src="/images/story/barista.jpg"
+                  alt="Barista menyiapkan seduhan kopi"
                   fill
                   sizes="(min-width: 1024px) 58vw, 100vw"
                   className="object-cover"

@@ -91,9 +91,9 @@ Variabel `NEXT_PUBLIC_*` dibaca oleh `src/data/site.ts`. Selama data bisnis belu
 
 Jangan commit `.env.local`. Hanya `.env.example` yang boleh masuk repository.
 
-## Aset Gambar Sementara
+## Foto Contoh untuk Demo
 
-Selama foto asli belum tersedia, `public/images/` diisi ilustrasi SVG bernuansa brand. Ganti dengan aset asli (logo, foto produk, barista, interior) sebelum launch produksi.
+Foto di `public/images/` adalah contoh dari Unsplash (dark editorial, satu set utuh) untuk kebutuhan demo client. Ganti dengan foto asli milik Smiljan (logo, produk, barista, interior) sebelum rilis produksi. Teks alternatif (alt) sudah ditulis deskriptif agar mudah disesuaikan. `public/images/menu/coffee-beans.svg` dipertahankan sebagai gambar fallback ketika sebuah foto gagal dimuat.
 
 ## Deployment
 

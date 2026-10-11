@@ -36,8 +36,8 @@ export default function Philosophy() {
           <Reveal delay={120} className="lg:col-span-7">
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-white">
               <ImageWithFallback
-                src="/images/story/space.svg"
-                alt="Meja peralatan seduh dan biji kopi dalam nuansa gelap"
+                src="/images/story/philosophy.jpg"
+                alt="Seduhan kopi dalam nuansa hangat"
                 fill
                 sizes="(min-width: 1024px) 58vw, 100vw"
                 className="object-cover"

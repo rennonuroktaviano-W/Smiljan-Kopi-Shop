@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="relative isolate flex min-h-svh flex-col justify-end overflow-hidden bg-obsidian text-ivory">
       <ImageWithFallback
-        src="/images/hero/hero-photo.svg"
+        src="/images/hero/hero.jpg"
         alt=""
         fill
         priority

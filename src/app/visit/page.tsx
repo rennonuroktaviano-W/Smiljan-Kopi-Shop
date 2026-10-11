@@ -65,7 +65,7 @@ export default function VisitPage() {
           <Reveal className="lg:col-span-7">
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-white">
               <ImageWithFallback
-                src="/images/cafe/interior.svg"
+                src="/images/cafe/interior.jpg"
                 alt="Meja bar kafe yang minimal dalam nuansa hangat"
                 fill
                 sizes="(min-width: 1024px) 58vw, 100vw"
