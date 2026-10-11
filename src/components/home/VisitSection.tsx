@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ImageWithFallback from "@/components/ui/ImageWithFallback";
 import { siteConfig } from "@/data/site";
 import Container from "@/components/layout/Container";
 import CtaLink from "@/components/ui/CtaLink";
@@ -32,7 +32,7 @@ export default function VisitSection() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
           <Reveal className="order-2 lg:order-1 lg:col-span-6">
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-white">
-              <Image
+              <ImageWithFallback
                 src="/images/cafe/interior.svg"
                 alt="Placeholder: ilustrasi meja bar kafe yang minimal"
                 fill

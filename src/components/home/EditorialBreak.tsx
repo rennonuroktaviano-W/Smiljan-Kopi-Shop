@@ -1,11 +1,11 @@
-import Image from "next/image";
+import ImageWithFallback from "@/components/ui/ImageWithFallback";
 import Container from "@/components/layout/Container";
 import Reveal from "@/components/ui/Reveal";
 
 export default function EditorialBreak() {
   return (
     <section className="relative isolate flex min-h-[70vh] items-center overflow-hidden bg-obsidian">
-      <Image
+      <ImageWithFallback
         src="/images/story/barista.svg"
         alt=""
         fill

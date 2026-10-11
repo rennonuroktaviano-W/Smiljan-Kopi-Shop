@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import ImageWithFallback from "@/components/ui/ImageWithFallback";
 import Link from "next/link";
 import { siteConfig } from "@/data/site";
 import { buildWhatsAppGeneralLink } from "@/lib/whatsapp";
@@ -65,7 +65,7 @@ export default function VisitPage() {
         <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-12">
           <Reveal className="lg:col-span-7">
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-white">
-              <Image
+              <ImageWithFallback
                 src="/images/cafe/interior.svg"
                 alt="Placeholder: ilustrasi meja bar kafe yang minimal"
                 fill

@@ -94,3 +94,36 @@
   opacity: 0;
   transform: translateY(24px);
 }
+
+/* Hero image reveal (§12): opacity + zoom keluar halus, non-blocking;
+   konten tetap terlihat karena ini hanya lapisan gambar dekoratif. */
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-media {
+  animation: hero-reveal 900ms var(--ease-editorial) both;
+  will-change: opacity, transform;
+}
+
+/* Page transition (§12): fade singkat saat route berubah. Template di-remount
+   oleh App Router sehingga animasi terputar ulang setiap navigasi. */
+@keyframes page-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page-anim {
+  animation: page-in 200ms var(--ease-editorial) both;
+}

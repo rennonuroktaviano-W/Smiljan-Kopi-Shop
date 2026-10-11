@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import ImageWithFallback from "@/components/ui/ImageWithFallback";
 import Container from "@/components/layout/Container";
 import DevNotice from "@/components/ui/DevNotice";
 import CtaLink from "@/components/ui/CtaLink";
@@ -76,7 +76,7 @@ export default function OurStoryPage() {
 
             <Reveal delay={120} className="lg:col-span-7">
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-obsidian">
-                <Image
+                <ImageWithFallback
                   src="/images/story/barista.svg"
                   alt="Placeholder: siluet barista menyiapkan seduhan"
                   fill

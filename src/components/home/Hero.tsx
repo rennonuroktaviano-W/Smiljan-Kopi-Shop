@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ImageWithFallback from "@/components/ui/ImageWithFallback";
 import { siteConfig } from "@/data/site";
 import Container from "@/components/layout/Container";
 import CtaLink from "@/components/ui/CtaLink";
@@ -7,13 +7,13 @@ import Reveal from "@/components/ui/Reveal";
 export default function Hero() {
   return (
     <section className="relative isolate flex min-h-svh flex-col justify-end overflow-hidden bg-obsidian text-ivory">
-      <Image
+      <ImageWithFallback
         src="/images/hero/hero-photo.svg"
         alt=""
         fill
         priority
         sizes="100vw"
-        className="absolute inset-0 -z-20 object-cover"
+        className="hero-media absolute inset-0 -z-20 object-cover"
       />
       <div
         aria-hidden="true"

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ImageWithFallback from "@/components/ui/ImageWithFallback";
 import type { MenuItem } from "@/types/menu";
 import { formatCurrency } from "@/lib/format-currency";
 import { buildWhatsAppOrderLink } from "@/lib/whatsapp";
@@ -31,7 +31,7 @@ export default function ProductCard({ item }: { item: MenuItem }) {
   return (
     <article className="group flex flex-col">
       <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-white">
-        <Image
+        <ImageWithFallback
           src={item.image}
           alt={item.imageAlt}
           fill

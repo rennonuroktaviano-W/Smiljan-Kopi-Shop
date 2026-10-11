@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ImageWithFallback from "@/components/ui/ImageWithFallback";
 import Container from "@/components/layout/Container";
 import CtaLink from "@/components/ui/CtaLink";
 import Reveal from "@/components/ui/Reveal";
@@ -35,7 +35,7 @@ export default function Philosophy() {
 
           <Reveal delay={120} className="lg:col-span-7">
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-white">
-              <Image
+              <ImageWithFallback
                 src="/images/story/space.svg"
                 alt="Placeholder: suasana editorial peralatan seduh dan biji kopi"
                 fill
