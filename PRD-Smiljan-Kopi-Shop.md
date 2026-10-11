@@ -587,6 +587,13 @@ Checklist berikut harus diperbarui seiring implementasi. Todo baru boleh dicenta
 - [x] Perbarui README dan konfigurasi contoh.
 - [x] Verifikasi semua commit dan push ke GitHub.
 
+### Hasil pemeriksaan nyata (11 Oktober 2026)
+
+- **Lint/typecheck/build:** 0 error / 0 error / sukses (6 route static).
+- **Playwright (Chromium):** `npm run test:e2e` 29/29 lulus; `npm run test:e2e:whatsapp` (nomor uji, build terpisah) 2/2 lulus. Mencakup: status 200 semua route, satu `h1`, alt text, skip-link, filter keyboard, drawer mobile + Escape, reduced-motion, tidak ada console/page/network error (termasuk favicon), tidak ada overflow horizontal di 9 viewport §13 + zoom 200%, alur WhatsApp aktif/nonaktif.
+- **Lighthouse (build produksi):** `/` dan `/menu` → Accessibility 100, Best Practices 100, SEO 100, CLS 0; Performance 92–94 (LCP lab ~2.9 s, TBT 160–240 ms). Field data CWV belum ada (belum produksi); target LCP ≤ 2.5 s tidak diklaim (§2/§16).
+- **Blocker tersisa:** ketersediaan data pemilik (menu/harga, nomor WhatsApp, alamat, jam, foto, persetujuan copy). Semua masih placeholder + `DevNotice` sesuai §9/§11/§24.
+
 ## 22. Instruksi untuk Coding Agent
 
 Baca PRD ini sebelum mengubah kode. Kemudian:
