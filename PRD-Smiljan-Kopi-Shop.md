@@ -568,23 +568,23 @@ git push -u origin <branch-kerja>
 ### Checklist proyek
 Checklist berikut harus diperbarui seiring implementasi. Todo baru boleh dicentang setelah selesai, diuji, dan di-push jika push memungkinkan.
 
-- [ ] Audit repository, branch, remote, scripts, dan status working tree.
-- [ ] Siapkan fondasi Next.js/Tailwind dan design tokens.
-- [ ] Implementasi shared layout, navbar, dan footer.
-- [ ] Implementasi hero homepage.
-- [ ] Implementasi signature menu dan sumber data produk.
-- [ ] Implementasi philosophy/story section.
-- [ ] Implementasi visit section.
-- [ ] Implementasi halaman menu dan kategori.
-- [ ] Implementasi halaman Our Story.
-- [ ] Implementasi halaman Visit.
-- [ ] Implementasi WhatsApp ordering.
-- [ ] Implementasi responsive behavior seluruh halaman.
-- [ ] Implementasi motion dan reduced-motion behavior.
-- [ ] Implementasi SEO dan metadata.
-- [ ] Implementasi accessibility dan error states.
-- [ ] Jalankan quality gates dan perbaiki temuan.
-- [ ] Perbarui README dan konfigurasi contoh.
+- [x] Audit repository, branch, remote, scripts, dan status working tree.
+- [x] Siapkan fondasi Next.js/Tailwind dan design tokens.
+- [x] Implementasi shared layout, navbar, dan footer.
+- [x] Implementasi hero homepage.
+- [x] Implementasi signature menu dan sumber data produk.
+- [x] Implementasi philosophy/story section.
+- [x] Implementasi visit section.
+- [x] Implementasi halaman menu dan kategori.
+- [x] Implementasi halaman Our Story.
+- [x] Implementasi halaman Visit.
+- [x] Implementasi WhatsApp ordering.
+- [x] Implementasi responsive behavior seluruh halaman.
+- [x] Implementasi motion dan reduced-motion behavior.
+- [x] Implementasi SEO dan metadata.
+- [x] Implementasi accessibility dan error states.
+- [x] Jalankan quality gates dan perbaiki temuan.
+- [x] Perbarui README dan konfigurasi contoh.
 - [ ] Verifikasi semua commit dan push ke GitHub.
 
 ## 22. Instruksi untuk Coding Agent
