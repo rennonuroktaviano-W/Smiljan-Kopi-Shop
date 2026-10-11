@@ -1,6 +1,6 @@
 import { test, expect, type Page } from "@playwright/test";
 
-// §13 PRD: target viewport yang wajib diuji.
+// Target viewport yang wajib diuji.
 const viewportTargets = [
   { name: "320x568 ponsel kecil", width: 320, height: 568 },
   { name: "360x800", width: 360, height: 800 },

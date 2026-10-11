@@ -6,8 +6,8 @@ import { useState } from "react";
 const FALLBACK_IMAGE = "/images/menu/coffee-beans.svg";
 
 /**
- * next/image dengan fallback jika gambar gagal dimuat (§17 PRD:
- * tangani gambar hilang dengan fallback yang masuk akal).
+ * next/image dengan fallback jika gambar gagal dimuat: tangani gambar
+ * hilang dengan pengganti yang masuk akal.
  */
 export default function ImageWithFallback({
   src,

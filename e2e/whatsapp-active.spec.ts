@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-/** Alur WhatsApp AKTIF dijalankan pada build terpisah dengan nomor uji (PRD §9). */
+/** Alur WhatsApp AKTIF dijalankan pada build terpisah dengan nomor uji. */
 test.describe("whatsapp AKTIF (nomor uji) (§9)", () => {
   test("/menu: CTA order membuka wa.me dengan teks terenkode yang benar", async ({
     page,
@@ -25,7 +25,7 @@ test.describe("whatsapp AKTIF (nomor uji) (§9)", () => {
     expect(text).toContain("Espresso");
     expect(text).toContain("Mohon info ketersediaannya.");
 
-    // Format pesan harus persis mengikuti contoh PRD §9.
+    // Format pesan harus persis mengikuti contoh pesan di spesifikasi.
     expect(text).toEqual(
       "Halo Smiljan, saya ingin memesan:\n1. Espresso\nMohon info ketersediaannya."
     );

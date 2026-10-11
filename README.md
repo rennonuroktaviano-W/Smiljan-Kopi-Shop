@@ -39,8 +39,8 @@ Perintah dijalankan pada **11 Oktober 2026** (Windows, Node 22, Chromium via Pla
 
 ### Playwright (Chromium)
 
-- `npm run test:e2e` — **29/29 lulus**: setiap route HTTP 200 tanpa console/page errors dan tanpa request gagal (termasuk favicon); satu `h1` dan `alt` pada semua gambar; skip-link; filter keyboard dengan `aria-pressed`; drawer mobile buka/Tutup + Escape; reduced-motion (konten langsung terlihat); **tidak ada overflow horizontal** di 9 viewport PRD (320×568 … 1920×1080) + zoom 200% (via CDP); WhatsApp nonaktif → CTA disabled tanpa tautan `wa.me`.
-- `npm run test:e2e:whatsapp` — **2/2 lulus**: dengan build bernomor uji, CTA order membuat `https://wa.me/6281234567890?text=…` dan teks persis mengikuti contoh PRD §9 (`Halo Smiljan, saya ingin memesan:\n1. Espresso\nMohon info ketersediaannya.`).
+- `npm run test:e2e` — **29/29 lulus**: setiap route HTTP 200 tanpa console/page errors dan tanpa request gagal (termasuk favicon); satu `h1` dan `alt` pada semua gambar; skip-link; filter keyboard dengan `aria-pressed`; drawer mobile buka/Tutup + Escape; reduced-motion (konten langsung terlihat); **tidak ada overflow horizontal** di 9 viewport (320×568 … 1920×1080) + zoom 200% (via CDP); WhatsApp nonaktif → CTA disabled tanpa tautan `wa.me`.
+- `npm run test:e2e:whatsapp` — **2/2 lulus**: dengan build bernomor uji, CTA order membuat `https://wa.me/6281234567890?text=…` dan teks persis mengikuti contoh pesan (`Halo Smiljan, saya ingin memesan:\n1. Espresso\nMohon info ketersediaannya.`).
 
 ### Lighthouse (build produksi, throttling mobile bawaan)
 
@@ -49,7 +49,7 @@ Perintah dijalankan pada **11 Oktober 2026** (Windows, Node 22, Chromium via Pla
 | `/` | 92 | 100 | 100 | 100 | 2.9 s | 0 | ~160–240 ms |
 | `/menu` | 94 | 100 | 100 | 100 | 2.9 s | 0 | 160 ms |
 
-Catatan jujur sesuai PRD §2/§16: LCP/CWV di atas adalah **pengukuran lab** pada koneksi lokal + throttling; angka lapangan (field data) belum tersedia karena belum ada traffic produksi. Target LCP ≤ 2.5 s di persentil ke-75 **tidak diklaim** hingga terukur dari data lapangan.
+Catatan jujur: LCP/CWV di atas adalah **pengukuran lab** pada koneksi lokal + throttling; angka lapangan (field data) belum tersedia karena belum ada traffic produksi. Target LCP ≤ 2.5 s di persentil ke-75 **tidak diklaim** hingga terukur dari data lapangan.
 
 Reproduksi (butuh path Chrome):
 ```bash
@@ -58,7 +58,7 @@ npm run start -- --port 3110
 npx lighthouse http://localhost:3110/ --only-categories=performance,accessibility,best-practices,seo --output=json --chrome-path="<path-ke-chrome.exe>"
 ```
 
-Satu-satunya blocker rilis tersisa: **data pemilik belum tersedia** (menu/harga asli, nomor WhatsApp, alamat, jam buka, foto). Sebelum itu, halaman menampilkan pesan "segara hadir" sesuai PRD §9/§11/§19.
+Satu-satunya blocker rilis tersisa: **data pemilik belum tersedia** (menu/harga asli, nomor WhatsApp, alamat, jam buka, foto). Sebelum itu, halaman menampilkan pesan "segara hadir".
 
 ## Struktur Penting
 

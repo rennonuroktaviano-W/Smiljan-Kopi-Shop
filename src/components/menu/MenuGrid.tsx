@@ -10,7 +10,7 @@ type FilterValue = MenuCategory | "all";
 export default function MenuGrid({ items }: { items: MenuItem[] }) {
   const [filter, setFilter] = useState<FilterValue>("all");
 
-  // §9 PRD: filter hanya untuk kategori yang benar-benar tersedia, tidak
+  // Filter hanya untuk kategori yang benar-benar tersedia, tidak
   // menampilkan kategori kosong.
   const availableCategories = useMemo(() => {
     const present = new Set(items.map((item) => item.category));
