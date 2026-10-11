@@ -28,10 +28,32 @@ export const metadata: Metadata = {
   description:
     "Smiljan Kopi Shop. Modern specialty coffee, thoughtfully brewed for your everyday ritual.",
   applicationName: "SMILJAN Kopi Shop",
+  category: "coffee shop",
+  keywords: [
+    "specialty coffee",
+    "kopi",
+    "coffee shop",
+    "smiljan",
+    "kopi shop",
+  ],
   openGraph: {
     siteName: "SMILJAN Kopi Shop",
     locale: "id_ID",
     type: "website",
+    title: "SMILJAN — KOPI SHOP",
+    description:
+      "Smiljan Kopi Shop. Modern specialty coffee, thoughtfully brewed for your everyday ritual.",
+    url: siteUrl,
+  },
+  twitter: {
+    card: "summary",
+    title: "SMILJAN — KOPI SHOP",
+    description:
+      "Smiljan Kopi Shop. Modern specialty coffee, thoughtfully brewed for your everyday ritual.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
