@@ -40,7 +40,7 @@ Perintah dijalankan pada **11 Oktober 2026** (Windows, Node 22, Chromium via Pla
 ### Playwright (Chromium)
 
 - `npm run test:e2e` — **29/29 lulus**: setiap route HTTP 200 tanpa console/page errors dan tanpa request gagal (termasuk favicon); satu `h1` dan `alt` pada semua gambar; skip-link; filter keyboard dengan `aria-pressed`; drawer mobile buka/Tutup + Escape; reduced-motion (konten langsung terlihat); **tidak ada overflow horizontal** di 9 viewport (320×568 … 1920×1080) + zoom 200% (via CDP); WhatsApp nonaktif → CTA disabled tanpa tautan `wa.me`.
-- `npm run test:e2e:whatsapp` — **2/2 lulus**: dengan build bernomor uji, CTA order membuat `https://wa.me/6281234567890?text=…` dan teks persis mengikuti contoh pesan (`Halo Smiljan, saya ingin memesan:\n1. Espresso\nMohon info ketersediaannya.`).
+- `npm run test:e2e:whatsapp` — **2/2 lulus**: dengan build bernomor uji, CTA order membuat `https://wa.me/6281234567890?text=…` dan teks persis mengikuti contoh pesan (`Halo Smiljan, saya ingin memesan:\n1. Kopi Kenangan Mantan\nMohon info ketersediaannya.`).
 
 ### Lighthouse (build produksi, throttling mobile bawaan)
 

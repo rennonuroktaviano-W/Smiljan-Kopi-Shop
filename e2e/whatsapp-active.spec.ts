@@ -22,12 +22,12 @@ test.describe("whatsapp AKTIF (nomor uji) (§9)", () => {
 
     const text = url.searchParams.get("text") ?? "";
     expect(text).toContain("Halo Smiljan, saya ingin memesan:");
-    expect(text).toContain("Espresso");
+    expect(text).toContain("Kopi Kenangan Mantan");
     expect(text).toContain("Mohon info ketersediaannya.");
 
     // Format pesan harus persis mengikuti contoh pesan di spesifikasi.
     expect(text).toEqual(
-      "Halo Smiljan, saya ingin memesan:\n1. Espresso\nMohon info ketersediaannya."
+      "Halo Smiljan, saya ingin memesan:\n1. Kopi Kenangan Mantan\nMohon info ketersediaannya."
     );
   });
 
