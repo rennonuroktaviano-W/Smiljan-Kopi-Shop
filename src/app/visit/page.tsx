@@ -5,6 +5,7 @@ import { siteConfig } from "@/data/site";
 import { buildWhatsAppGeneralLink } from "@/lib/whatsapp";
 import Container from "@/components/layout/Container";
 import DevNotice from "@/components/ui/DevNotice";
+import DisabledCta from "@/components/ui/DisabledCta";
 import ExternalLink from "@/components/ui/ExternalLink";
 import Reveal from "@/components/ui/Reveal";
 
@@ -112,13 +113,7 @@ export default function VisitPage() {
               {whatsappHref ? (
                 <ExternalLink href={whatsappHref}>Chat WhatsApp</ExternalLink>
               ) : (
-                <span
-                  aria-disabled="true"
-                  title="Nomor WhatsApp belum dikonfigurasi pemilik."
-                  className="inline-flex min-h-11 cursor-not-allowed items-center justify-center rounded-full border border-stone px-6 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-graphite"
-                >
-                  WhatsApp belum aktif
-                </span>
+                <DisabledCta label="WhatsApp belum aktif" />
               )}
               {hasDirections ? (
                 <ExternalLink href={siteConfig.mapsUrl}>Directions</ExternalLink>

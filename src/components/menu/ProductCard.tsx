@@ -3,32 +3,17 @@ import type { MenuItem } from "@/types/menu";
 import { formatCurrency } from "@/lib/format-currency";
 import { buildWhatsAppOrderLink } from "@/lib/whatsapp";
 import ExternalLink from "@/components/ui/ExternalLink";
+import DisabledCta from "@/components/ui/DisabledCta";
 
 function OrderAction({ item }: { item: MenuItem }) {
   if (!item.available) {
-    return (
-      <span
-        aria-disabled="true"
-        title="Ketersediaan menunggu konfirmasi pemilik"
-        className="inline-flex min-h-11 cursor-not-allowed items-center justify-center rounded-full border border-stone px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-graphite"
-      >
-        Sementara kosong
-      </span>
-    );
+    return <DisabledCta label="Sementara kosong" />;
   }
 
   const orderHref = buildWhatsAppOrderLink([{ name: item.name }]);
 
   if (!orderHref) {
-    return (
-      <span
-        aria-disabled="true"
-        title="Nomor WhatsApp belum dikonfigurasi pemilik."
-        className="inline-flex min-h-11 cursor-not-allowed items-center justify-center rounded-full border border-stone px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-graphite"
-      >
-        Pemesanan belum aktif
-      </span>
-    );
+    return <DisabledCta label="Pemesanan belum aktif" />;
   }
 
   return (
