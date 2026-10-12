@@ -27,7 +27,8 @@ npm run test:e2e        # Playwright: routes/console, matrix viewport, a11y, adm
 npm run test:e2e:whatsapp  # Playwright: alur WhatsApp AKTIF (build terpisah + nomor uji)
 npm run db:generate     # buat migrasi Drizzle dari skema (src/lib/db/schema.ts)
 npm run db:migrate      # terapkan migrasi ke DATABASE_URL (atau PGlite lokal)
-npm run db:prepare      # migrate + seed akun pemilik (dipakai CI e2e & setup lokal)
+npm run db:prepare      # migrate + seed akun pemilik + sinkronkan katalog menu (dipakai CI e2e & setup lokal)
+npm run db:seed:menu    # salin katalog menu statis (menu.json) ke basis data (idempoten)
 npm run create-owner    # buat/perbarui akun pemilik (owner)
 ```
 
@@ -43,6 +44,7 @@ Area administrasi ada di `/admin` (login di `/admin/login`).
 - **Peran:** `owner` | `admin` | `editor` | `viewer`, dipetakan ke izin lewat `can(role, permission)` (`src/lib/auth/roles.ts`).
 - **Database:** Drizzle ORM. Produksi memakai Postgres Neon (`DATABASE_URL`); lokal/tes memakai PGlite embedded (tanpa Docker) dengan `ALLOW_LOCAL_DB=1`.
 - **Audit:** setiap login (berhasil/gagal) dan aksi tulis dicatat ke tabel `audit_logs`; login dibatasi (rate limit) via `login_attempts`.
+- **Katalog menu:** tabel `menu_categories` + `menu_items` menjadi sumber konten. `npm run db:prepare` (atau `db:seed:menu`) menyalin `src/data/menu.json` ke basis data. Halaman publik `/menu` membaca basis data (ISR 60 detik) dan **jatuh kembali ke `menu.json`** bila basis data tidak tersedia, sehingga situs tetap dapat dibangun tanpa `DATABASE_URL`.
 
 ### Menjalankan admin di lokal
 

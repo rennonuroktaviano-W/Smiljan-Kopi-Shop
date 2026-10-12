@@ -12,7 +12,20 @@ import { drizzle as drizzlePglite } from "drizzle-orm/pglite";
 import { drizzle as drizzleNeon } from "drizzle-orm/neon-http";
 import { migrate as migratePglite } from "drizzle-orm/pglite/migrator";
 import { migrate as migrateNeon } from "drizzle-orm/neon-http/migrator";
-import { users, type NewUser, type UserRow } from "../src/lib/db/schema";
+import {
+  menuCategories,
+  menuItems,
+  users,
+  type NewMenuCategory,
+  type NewMenuItem,
+  type NewUser,
+  type UserRow,
+} from "../src/lib/db/schema";
+import {
+  menuCategories as menuCategoryDefs,
+  type AvailabilityStatus,
+} from "../src/types/menu";
+import menuJson from "../src/data/menu.json";
 import { hashPassword } from "../src/lib/auth/password";
 import {
   isValidEmail,
@@ -30,6 +43,8 @@ export interface ScriptConnection {
   findUserByEmail: (email: string) => Promise<UserRow | undefined>;
   insertUser: (values: NewUser) => Promise<void>;
   updateUser: (id: string, patch: Partial<NewUser>) => Promise<void>;
+  upsertMenuCategory: (values: NewMenuCategory) => Promise<void>;
+  upsertMenuItem: (values: NewMenuItem) => Promise<void>;
   close: () => Promise<void>;
 }
 
@@ -50,6 +65,43 @@ export async function connect(): Promise<ScriptConnection> {
       },
       updateUser: async (id, patch) => {
         await db.update(users).set(patch).where(eq(users.id, id));
+      },
+      upsertMenuCategory: async (values) => {
+        await db
+          .insert(menuCategories)
+          .values(values)
+          .onConflictDoUpdate({
+            target: menuCategories.id,
+            set: {
+              label: values.label,
+              sortOrder: values.sortOrder,
+              updatedAt: new Date(),
+            },
+          });
+      },
+      upsertMenuItem: async (values) => {
+        await db
+          .insert(menuItems)
+          .values(values)
+          .onConflictDoUpdate({
+            target: menuItems.id,
+            set: {
+              name: values.name,
+              description: values.description,
+              categoryId: values.categoryId,
+              price: values.price,
+              image: values.image,
+              imageAlt: values.imageAlt,
+              featured: values.featured,
+              availabilityStatus: values.availabilityStatus,
+              imageSource: values.imageSource,
+              imageLicense: values.imageLicense,
+              sourceUrl: values.sourceUrl,
+              isPublished: values.isPublished,
+              sortOrder: values.sortOrder,
+              updatedAt: new Date(),
+            },
+          });
       },
       close: async () => {},
     };
@@ -72,6 +124,43 @@ export async function connect(): Promise<ScriptConnection> {
     },
     updateUser: async (id, patch) => {
       await db.update(users).set(patch).where(eq(users.id, id));
+    },
+    upsertMenuCategory: async (values) => {
+      await db
+        .insert(menuCategories)
+        .values(values)
+        .onConflictDoUpdate({
+          target: menuCategories.id,
+          set: {
+            label: values.label,
+            sortOrder: values.sortOrder,
+            updatedAt: new Date(),
+          },
+        });
+    },
+    upsertMenuItem: async (values) => {
+      await db
+        .insert(menuItems)
+        .values(values)
+        .onConflictDoUpdate({
+          target: menuItems.id,
+          set: {
+            name: values.name,
+            description: values.description,
+            categoryId: values.categoryId,
+            price: values.price,
+            image: values.image,
+            imageAlt: values.imageAlt,
+            featured: values.featured,
+            availabilityStatus: values.availabilityStatus,
+            imageSource: values.imageSource,
+            imageLicense: values.imageLicense,
+            sourceUrl: values.sourceUrl,
+            isPublished: values.isPublished,
+            sortOrder: values.sortOrder,
+            updatedAt: new Date(),
+          },
+        });
     },
     close: async () => {
       await client.close();
@@ -121,4 +210,43 @@ export async function seedOwner(
     isActive: true,
   });
   return { created: true, email };
+}
+
+/**
+ * Menyalin katalog menu statis (`src/data/menu.json`) ke basis data. Bersifat
+ * idempoten: menjalankannya ulang tidak menggandakan data (upsert by id).
+ * Ini adalah jembatan migrasi: setelah ini, basis data menjadi sumber konten
+ * yang dapat dikelola lewat CMS.
+ */
+export async function seedMenu(
+  connection: ScriptConnection
+): Promise<{ categories: number; items: number }> {
+  for (const [index, category] of menuCategoryDefs.entries()) {
+    await connection.upsertMenuCategory({
+      id: category.value,
+      label: category.label,
+      sortOrder: index,
+    });
+  }
+
+  for (const [index, entry] of menuJson.entries()) {
+    await connection.upsertMenuItem({
+      id: entry.id,
+      name: entry.name,
+      description: entry.description,
+      categoryId: entry.category,
+      price: entry.price,
+      image: entry.image,
+      imageAlt: entry.imageAlt,
+      featured: "featured" in entry ? entry.featured : false,
+      availabilityStatus: entry.availabilityStatus as AvailabilityStatus,
+      imageSource: entry.imageSource,
+      imageLicense: entry.imageLicense,
+      sourceUrl: entry.sourceUrl,
+      isPublished: true,
+      sortOrder: index,
+    });
+  }
+
+  return { categories: menuCategoryDefs.length, items: menuJson.length };
 }

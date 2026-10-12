@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { menuItems } from "@/data/menu";
+import { getMenuItems } from "@/lib/menu/catalog";
 import Container from "@/components/layout/Container";
 import DevNotice from "@/components/ui/DevNotice";
 import MenuGrid from "@/components/menu/MenuGrid";
@@ -11,7 +11,13 @@ export const metadata: Metadata = {
     "Menu SMILJAN: kopi, minuman non-kopi, dan pilihan pastry. Pesan langsung melalui WhatsApp.",
 };
 
-export default function MenuPage() {
+// Katalog dikelola lewat CMS; halaman direvalidasi berkala agar perubahan
+// pemilik tampil tanpa membangun ulang, tanpa mengorbankan kecepatan statis.
+export const revalidate = 60;
+
+export default async function MenuPage() {
+  const menuItems = await getMenuItems();
+
   return (
     <section className="bg-ivory pb-24 pt-28 md:pt-36">
       <Container>

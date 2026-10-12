@@ -1,9 +1,9 @@
 import { count, desc } from "drizzle-orm";
 import { getDb } from "@/lib/db";
 import { auditLogs, users } from "@/lib/db/schema";
+import { countMenuItems } from "@/lib/db/repositories/menu";
 import { getCurrentUser } from "@/lib/auth/guard";
 import { ROLE_LABELS } from "@/lib/auth/roles";
-import { menuItems } from "@/data/menu";
 
 export const dynamic = "force-dynamic";
 
@@ -41,11 +41,13 @@ export default async function AdminDashboard({
   const user = await getCurrentUser();
   const db = await getDb();
 
-  const [userCountRows, auditCountRows, recentAudit] = await Promise.all([
-    db.select({ value: count() }).from(users),
-    db.select({ value: count() }).from(auditLogs),
-    db.select().from(auditLogs).orderBy(desc(auditLogs.createdAt)).limit(8),
-  ]);
+  const [userCountRows, auditCountRows, menuCount, recentAudit] =
+    await Promise.all([
+      db.select({ value: count() }).from(users),
+      db.select({ value: count() }).from(auditLogs),
+      countMenuItems(db),
+      db.select().from(auditLogs).orderBy(desc(auditLogs.createdAt)).limit(8),
+    ]);
 
   return (
     <div className="mx-auto max-w-5xl space-y-8">
@@ -75,8 +77,8 @@ export default async function AdminDashboard({
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <StatCard
           label="Item menu"
-          value={menuItems.length}
-          hint="Sumber saat ini: data menu statis (belum dikelola CMS)."
+          value={menuCount}
+          hint="Item pada katalog basis data (termasuk yang belum dipublikasikan)."
         />
         <StatCard
           label="Akun admin"
