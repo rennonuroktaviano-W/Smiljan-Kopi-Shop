@@ -159,7 +159,7 @@ export default async function AdminDashboard({
           Modul dalam pengembangan
         </h2>
         <ul className="mt-3 list-inside list-disc space-y-1 text-sm text-graphite">
-          <li>Manajemen menu & kategori</li>
+          <li>Manajemen kategori</li>
           <li>Pustaka media dan unggahan gambar</li>
           <li>Halaman, desain, navigasi, promosi, dan SEO</li>
           <li>Pengaturan bisnis, publikasi, dan log audit lanjutan</li>

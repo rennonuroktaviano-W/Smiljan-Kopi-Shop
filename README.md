@@ -45,6 +45,7 @@ Area administrasi ada di `/admin` (login di `/admin/login`).
 - **Database:** Drizzle ORM. Produksi memakai Postgres Neon (`DATABASE_URL`); lokal/tes memakai PGlite embedded (tanpa Docker) dengan `ALLOW_LOCAL_DB=1`.
 - **Audit:** setiap login (berhasil/gagal) dan aksi tulis dicatat ke tabel `audit_logs`; login dibatasi (rate limit) via `login_attempts`.
 - **Katalog menu:** tabel `menu_categories` + `menu_items` menjadi sumber konten. `npm run db:prepare` (atau `db:seed:menu`) menyalin `src/data/menu.json` ke basis data. Halaman publik `/menu` membaca basis data (ISR 60 detik) dan **jatuh kembali ke `menu.json`** bila basis data tidak tersedia, sehingga situs tetap dapat dibangun tanpa `DATABASE_URL`.
+- **Manajemen menu:** `/admin/menu` menampilkan seluruh item (termasuk draf) dengan aksi tambah/ubah/terbitkan/hapus. Setiap penulisan menegakkan izin `menu.manage` di server, dicatat ke log audit, lalu merevalidasi halaman publik. Item draf (`isPublished=false`) tidak tampil di `/menu`.
 
 ### Menjalankan admin di lokal
 

@@ -3,8 +3,8 @@ import type { DbClient } from "../client";
 import {
   menuCategories,
   menuItems,
-  type MenuCategoryRow,
   type MenuItemRow,
+  type NewMenuItem,
 } from "../schema";
 import {
   isMenuCategory,
@@ -49,7 +49,7 @@ function toMenuItem(row: MenuItemRow): MenuItem {
 export async function listMenuCategories(
   db: DbClient
 ): Promise<MenuCategoryRecord[]> {
-  const rows = await db
+  return db
     .select({
       id: menuCategories.id,
       label: menuCategories.label,
@@ -57,7 +57,6 @@ export async function listMenuCategories(
     })
     .from(menuCategories)
     .orderBy(asc(menuCategories.sortOrder), asc(menuCategories.label));
-  return rows;
 }
 
 /** Item yang tampil di situs publik (isPublished = true), terurut. */
@@ -70,13 +69,21 @@ export async function listPublishedMenuItems(db: DbClient): Promise<MenuItem[]> 
   return rows.map(toMenuItem);
 }
 
-/** Seluruh item termasuk yang belum dipublikasikan (untuk panel admin). */
-export async function listAllMenuItems(db: DbClient): Promise<MenuItem[]> {
-  const rows = await db
+/** Seluruh item baris (termasuk draf) untuk panel admin. */
+export async function listMenuItemRows(db: DbClient): Promise<MenuItemRow[]> {
+  return db
     .select()
     .from(menuItems)
     .orderBy(asc(menuItems.sortOrder), asc(menuItems.name));
-  return rows.map(toMenuItem);
+}
+
+export async function getMenuItemById(
+  db: DbClient,
+  id: string
+): Promise<MenuItemRow | undefined> {
+  return (
+    await db.select().from(menuItems).where(eq(menuItems.id, id)).limit(1)
+  )[0];
 }
 
 export async function countMenuItems(db: DbClient): Promise<number> {
@@ -84,15 +91,35 @@ export async function countMenuItems(db: DbClient): Promise<number> {
   return rows[0]?.value ?? 0;
 }
 
-export async function getMenuCategoryById(
+export async function createMenuItem(
   db: DbClient,
-  id: string
-): Promise<MenuCategoryRow | undefined> {
-  return (
-    await db
-      .select()
-      .from(menuCategories)
-      .where(eq(menuCategories.id, id))
-      .limit(1)
-  )[0];
+  values: NewMenuItem
+): Promise<void> {
+  await db.insert(menuItems).values(values);
+}
+
+export async function updateMenuItem(
+  db: DbClient,
+  id: string,
+  patch: Partial<NewMenuItem>
+): Promise<void> {
+  await db
+    .update(menuItems)
+    .set({ ...patch, updatedAt: new Date() })
+    .where(eq(menuItems.id, id));
+}
+
+export async function setMenuItemPublished(
+  db: DbClient,
+  id: string,
+  isPublished: boolean
+): Promise<void> {
+  await db
+    .update(menuItems)
+    .set({ isPublished, updatedAt: new Date() })
+    .where(eq(menuItems.id, id));
+}
+
+export async function deleteMenuItem(db: DbClient, id: string): Promise<void> {
+  await db.delete(menuItems).where(eq(menuItems.id, id));
 }
