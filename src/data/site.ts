@@ -1,3 +1,5 @@
+import { toSafeExternalUrl } from "@/lib/safe-url";
+
 export interface NavLink {
   href: string;
   label: string;
@@ -39,11 +41,11 @@ export const siteConfig: SiteConfig = {
   orderCtaLabel: "Pesan Kopi",
   whatsappNumber:
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/[^\d]/g, "") ?? "",
-  instagramUrl: process.env.NEXT_PUBLIC_INSTAGRAM_URL?.trim() ?? "",
-  tiktokUrl: process.env.NEXT_PUBLIC_TIKTOK_URL?.trim() ?? "",
+  instagramUrl: toSafeExternalUrl(process.env.NEXT_PUBLIC_INSTAGRAM_URL),
+  tiktokUrl: toSafeExternalUrl(process.env.NEXT_PUBLIC_TIKTOK_URL),
   addressLine1: process.env.NEXT_PUBLIC_ADDRESS_LINE_1?.trim() ?? "",
   addressLine2: process.env.NEXT_PUBLIC_ADDRESS_LINE_2?.trim() ?? "",
-  mapsUrl: process.env.NEXT_PUBLIC_MAPS_URL?.trim() ?? "",
+  mapsUrl: toSafeExternalUrl(process.env.NEXT_PUBLIC_MAPS_URL),
   businessArea: process.env.NEXT_PUBLIC_BUSINESS_AREA?.trim() ?? "",
   businessInfoReady: process.env.NEXT_PUBLIC_BUSINESS_INFO_READY === "true",
 };
