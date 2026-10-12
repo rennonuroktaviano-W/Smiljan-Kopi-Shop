@@ -67,7 +67,7 @@ Satu-satunya blocker rilis tersisa: **data pemilik belum tersedia** (menu/harga 
 
 ```
 src/
-  app/            # routes: /, /menu, /our-story, /visit + sitemap/robots + error/not-found/loading
+  app/            # routes: /, /menu, /our-story, /visit, /privacy + sitemap/robots + error/not-found/loading
   components/
     home/         # section homepage (Hero, SignatureMenu, Philosophy, EditorialBreak, VisitSection, ClosingCta)
     menu/         # ProductCard, MenuGrid (filter kategori client-side)
@@ -93,6 +93,8 @@ Variabel `NEXT_PUBLIC_*` dibaca oleh `src/data/site.ts`. Selama data bisnis belu
 - `NEXT_PUBLIC_BUSINESS_INFO_READY=true` hanya setelah seluruh data bisnis final dan terverifikasi.
 
 Jangan commit `.env.local`. Hanya `.env.example` yang boleh masuk repository.
+
+Analytics bersifat opsional dan tanpa cookie: isi `NEXT_PUBLIC_CF_BEACON_TOKEN` untuk mengaktifkan Cloudflare Web Analytics, atau biarkan kosong untuk menonaktifkannya sepenuhnya. Detail: [`docs/cloudflare-setup.md`](docs/cloudflare-setup.md) bagian 10 dan halaman [`/privacy`](src/app/privacy/page.tsx).
 
 ## Foto Contoh untuk Demo
 

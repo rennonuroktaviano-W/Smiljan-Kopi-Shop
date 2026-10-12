@@ -49,6 +49,9 @@ export default function Footer() {
                 <FooterLink href={link.href}>{link.label}</FooterLink>
               </li>
             ))}
+            <li>
+              <FooterLink href="/privacy">Kebijakan Privasi</FooterLink>
+            </li>
           </ul>
         </nav>
 

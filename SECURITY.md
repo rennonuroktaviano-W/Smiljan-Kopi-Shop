@@ -100,6 +100,10 @@ bagian 6.
 | `e2e/security-headers.spec.ts` | Uji otomatis header keamanan di 4 rute |
 | `.github/workflows/security.yml` | CI: lint, typecheck, validate menu, build, audit produksi, pemindaian rahasia (gitleaks) |
 | `SECURITY.md` | Dokumen ini |
+| `docs/cloudflare-setup.md` + `scripts/verify-headers.mjs` | Panduan setup Cloudflare dan verifikasi header/`cf-ray` (`npm run verify:headers`) |
+| `src/components/analytics/CloudflareAnalytics.tsx` | Beacon Cloudflare Web Analytics (tanpa cookie) — hanya dimuat jika `NEXT_PUBLIC_CF_BEACON_TOKEN` diisi |
+| `src/app/privacy/page.tsx`, `Footer.tsx`, `sitemap.ts` | Halaman Kebijakan Privasi + tautan footer + entri sitemap |
+| `e2e/analytics.spec.ts` | Uji: tanpa token tidak ada request analytics, dan situs tidak memasang cookie |
 
 ## 4. Checklist Deployment (Aksi Manusia)
 
@@ -175,6 +179,7 @@ Karena tidak ada endpoint dinamis, rate limit cukup di edge:
 | `NEXT_PUBLIC_ADDRESS_LINE_1` / `_2` | ya | Alamat |
 | `NEXT_PUBLIC_MAPS_URL` | ya | Wajib `https://` valid |
 | `NEXT_PUBLIC_BUSINESS_INFO_READY` | ya | `true`/`false` |
+| `NEXT_PUBLIC_CF_BEACON_TOKEN` | ya | Beacon Cloudflare Web Analytics (tanpa cookie); kosong = analytics mati total |
 
 Tidak ada variabel server-side/rahasia saat ini. Jika nanti ditambahkan,
 **jangan** memakai prefix `NEXT_PUBLIC_` untuk nilai rahasia.
@@ -194,5 +199,9 @@ gunakan hosted checkout penyedia pembayaran.
   statis Next.js menyisipkan skrip bootstrap inline dan style `next/font`.
   Menghapusnya memerlukan nonce via middleware (menambah runtime, menurunkan
   cache statis) atau hash; dievaluasi ulang jika kebutuhan meningkat.
+- CSP mengizinkan domain Cloudflare Web Analytics
+  (`static.cloudflareinsights.com` / `cloudflareinsights.com`) agar beacon tanpa
+  cookie dapat dimuat. Beacon hanya dikirim jika `NEXT_PUBLIC_CF_BEACON_TOKEN`
+  diisi; tanpa token tidak ada request pihak ketiga sama sekali.
 - Perlindungan DDoS/bot bergantung penuh pada langkah infrastruktur bagian 4.
 - Advisory dev-only T-5 belum ada jalur perbaikan yang aman.

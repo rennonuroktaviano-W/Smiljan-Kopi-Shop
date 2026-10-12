@@ -129,17 +129,30 @@ curl.exe -sI https://203.0.113.10 -H "Host: domain-anda.com"
 referrer/permissions policy, kebocoran `X-Powered-By`, redirect HTTP→HTTPS, dan
 memberi peringatan jika Cloudflare tidak terdeteksi.
 
-## 10. Analytics Tanpa Cookie (Opsional)
+## 10. Analytics Tanpa Cookie (Sudah Diaktifkan di Kode)
 
 Cloudflare Web Analytics tidak memakai cookie, jadi **tidak perlu banner
-persetujuan**. Aktifkan di **Analytics → Web Analytics**.
+persetujuan**. Implementasinya sudah ada di kode: `CloudflareAnalytics`
+(`src/components/analytics/CloudflareAnalytics.tsx`) hanya memuat beacon jika
+environment `NEXT_PUBLIC_CF_BEACON_TOKEN` diisi. CSP di `next.config.ts` sudah
+mengizinkan `static.cloudflareinsights.com` (script) dan
+`cloudflareinsights.com` (connect).
 
-> Catatan: CSP situs kita saat ini (`script-src 'self' 'unsafe-inline'`)
-> **memblokir** beacon Cloudflare yang disuntik otomatis dari
-> `static.cloudflareinsights.com`. Jika Anda mengaktifkannya, beri tahu saya —
-> saya perlu menambahkan `static.cloudflareinsights.com` ke `script-src` dan
-> `cloudflareinsights.com` ke `connect-src` di `next.config.ts`. Tanpa itu,
-> analytics akan gagal dimuat (dan tidak ada data yang tercatat).
+Langkah Anda:
+
+1. Cloudflare → **Analytics & Logs → Web Analytics → Add a site**.
+2. Pilih mode **JS snippet** (bukan injeksi otomatis) → salin token dari
+   snippet `beacon.min.js` (`data-cf-beacon='{"token": "..."}'`).
+3. Set `NEXT_PUBLIC_CF_BEACON_TOKEN=<token>` di environment hosting, lalu
+   deploy ulang. Biarkan kosong untuk menonaktifkan analytics sepenuhnya.
+4. Verifikasi: DevTools → Network harus ada `beacon.min.js` (status 200) dan
+   console bersih dari error CSP; data muncul di dashboard setelah ada trafik.
+
+> Jangan aktifkan dua mode sekaligus: jika Cloudflare menyuntik beacon otomatis
+> sementara snippet manual juga aktif, kunjungan akan tercatat dobel.
+>
+> Selama token kosong (termasuk saat tes otomatis), tidak ada satu pun request
+> analytics dan tidak ada cookie — dijamin oleh `e2e/analytics.spec.ts`.
 
 ## 11. Notifikasi & Monitoring
 

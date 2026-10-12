@@ -1,6 +1,6 @@
 import { test, expect, type Page } from "@playwright/test";
 
-const htmlRoutes = ["/", "/menu", "/our-story", "/visit"];
+const htmlRoutes = ["/", "/menu", "/our-story", "/visit", "/privacy"];
 const staticFiles = ["/sitemap.xml", "/robots.txt"];
 
 async function hookErrors(

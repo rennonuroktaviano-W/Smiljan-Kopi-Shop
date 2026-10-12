@@ -13,7 +13,7 @@ const viewportTargets = [
   { name: "1920x1080 desktop lebar", width: 1920, height: 1080 },
 ];
 
-const routes = ["/", "/menu", "/our-story", "/visit"];
+const routes = ["/", "/menu", "/our-story", "/visit", "/privacy"];
 
 /** Selisih horizontal overflow pada document root. */
 async function horizontalOverflow(page: Page): Promise<number> {

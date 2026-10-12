@@ -2,17 +2,19 @@ import type { NextConfig } from "next";
 
 const isProd = process.env.NODE_ENV === "production";
 
-// Content-Security-Policy minimum untuk situs statis Next.js tanpa
-// script/pihak ketiga. Next.js menyisipkan skrip inline untuk hidrasi RSC
-// dan style inline dari next/font, sehingga 'unsafe-inline' tetap diperlukan;
-// 'unsafe-eval' hanya ditambahkan pada mode development agar HMR berjalan.
+// Content-Security-Policy minimum untuk situs statis Next.js. Next.js
+// menyisipkan skrip inline untuk hidrasi RSC dan style inline dari
+// next/font, sehingga 'unsafe-inline' tetap diperlukan; 'unsafe-eval' hanya
+// ditambahkan pada mode development agar HMR berjalan. Domain Cloudflare
+// Web Analytics diizinkan eksplisit untuk beacon tanpa cookie (token kosong
+// = beacon tidak dimuat sama sekali).
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isProd ? "" : " 'unsafe-eval'"}`,
+  `script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com${isProd ? "" : " 'unsafe-eval'"}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self' data:",
-  "connect-src 'self'",
+  "connect-src 'self' https://cloudflareinsights.com",
   "media-src 'self'",
   "worker-src 'self' blob:",
   "manifest-src 'self'",

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Manrope, Playfair_Display } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import CloudflareAnalytics from "@/components/analytics/CloudflareAnalytics";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -75,6 +76,7 @@ export default function RootLayout({
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        <CloudflareAnalytics />
       </body>
     </html>
   );
