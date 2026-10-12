@@ -22,6 +22,7 @@ npm run start           # serve production build
 npm run lint            # ESLint
 npm run typecheck       # TypeScript type check
 npm run validate:menu   # validasi katalog menu & aset foto (menu.json)
+npm run verify:headers  # verifikasi header keamanan situs terdeploy: npm run verify:headers -- https://domain
 npm run test:e2e        # Playwright: routes/console, matrix viewport, a11y, WhatsApp nonaktif
 npm run test:e2e:whatsapp  # Playwright: alur WhatsApp AKTIF (build terpisah + nomor uji)
 ```
@@ -114,3 +115,5 @@ Catatan: harga seluruh item Smiljan sengaja `null` ("Harga menyusul") karena har
 ## Deployment
 
 Build statis menjalankan `next build` saja sudah cukup (seluruh rute prerender). Publikasikan dengan cara yang Anda gunakan (Vercel, Netlify, Node server, dsb.), pastikan variabel `NEXT_PUBLIC_*` di-set sesuai environment.
+
+Untuk proteksi DDoS/WAF/bot di lapisan edge, ikuti [`docs/cloudflare-setup.md`](docs/cloudflare-setup.md) dan selengkapnya di [`SECURITY.md`](SECURITY.md).

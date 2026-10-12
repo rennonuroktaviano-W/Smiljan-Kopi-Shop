@@ -9,6 +9,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "validate:menu": "node scripts/validate-menu.mjs",
+    "verify:headers": "node scripts/verify-headers.mjs",
     "test:e2e": "playwright test",
     "test:e2e:whatsapp": "playwright test --config playwright.whatsapp.config.ts"
   },

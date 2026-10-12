@@ -109,11 +109,15 @@ bagian 6.
 ### 4.1 HTTPS & header
 
 - [ ] Pastikan situs disajikan via HTTPS dengan sertifikat valid (Let's Encrypt/hosting).
-- [ ] Verifikasi header dengan: `curl -sI https://<domain> | findstr /I "content-security-policy strict-transport x-frame x-content referrer permissions x-powered-by"`.
+- [ ] Verifikasi header dengan `npm run verify:headers -- https://<domain>`
+      (atau `curl -sI https://<domain>`).
 - [ ] Setelah semua subdomain dipastikan HTTPS, opsional ubah HSTS menjadi
       `max-age=63072000; includeSubDomains; preload` di `next.config.ts`.
 
-### 4.2 CDN/WAF/DDoS (contoh: Cloudflare — DNS di-proxy)
+### 4.2 CDN/WAF/DDoS (Cloudflare)
+
+**Panduan langkah demi langkah: [`docs/cloudflare-setup.md`](docs/cloudflare-setup.md).**
+Ringkasan:
 
 1. Tambahkan domain ke Cloudflare, arahkan nameserver.
 2. Aktifkan proxy (awan oranye) untuk record `A`/`CNAME` situs.
