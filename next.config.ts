@@ -51,6 +51,9 @@ const nextConfig: NextConfig = {
   // Jangan bocorkan versi framework melalui header X-Powered-By.
   poweredByHeader: false,
   reactStrictMode: true,
+  // PGlite memuat WASM dan hanya dipakai untuk pengembangan/tes lokal;
+  // biarkan sebagai paket eksternal agar tidak dipaketkan oleh bundler.
+  serverExternalPackages: ["@electric-sql/pglite"],
   turbopack: {
     rules: {
       "*.css": {

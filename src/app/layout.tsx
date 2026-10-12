@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, Playfair_Display } from "next/font/google";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import CloudflareAnalytics from "@/components/analytics/CloudflareAnalytics";
 import "./globals.css";
 
@@ -70,12 +68,7 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${manrope.variable} ${playfair.variable}`}>
       <body>
-        <a href="#main" className="skip-link">
-          Langsung ke konten utama
-        </a>
-        <Header />
-        <main id="main">{children}</main>
-        <Footer />
+        {children}
         <CloudflareAnalytics />
       </body>
     </html>

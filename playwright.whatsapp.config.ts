@@ -26,6 +26,7 @@ export default defineConfig({
       ...process.env,
       NEXT_PUBLIC_WHATSAPP_NUMBER: "6281234567890",
       NEXT_PUBLIC_BUSINESS_INFO_READY: "false",
+      AUTH_SECRET: "test-only-auth-secret-do-not-use-in-production",
     },
   },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],

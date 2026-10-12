@@ -23,9 +23,35 @@ npm run lint            # ESLint
 npm run typecheck       # TypeScript type check
 npm run validate:menu   # validasi katalog menu & aset foto (menu.json)
 npm run verify:headers  # verifikasi header keamanan situs terdeploy: npm run verify:headers -- https://domain
-npm run test:e2e        # Playwright: routes/console, matrix viewport, a11y, WhatsApp nonaktif
+npm run test:e2e        # Playwright: routes/console, matrix viewport, a11y, admin auth, SEO, WhatsApp nonaktif
 npm run test:e2e:whatsapp  # Playwright: alur WhatsApp AKTIF (build terpisah + nomor uji)
+npm run db:generate     # buat migrasi Drizzle dari skema (src/lib/db/schema.ts)
+npm run db:migrate      # terapkan migrasi ke DATABASE_URL (atau PGlite lokal)
+npm run db:prepare      # migrate + seed akun pemilik (dipakai CI e2e & setup lokal)
+npm run create-owner    # buat/perbarui akun pemilik (owner)
 ```
+
+## Tentang Next.js 16 & rute statis
+
+Seluruh halaman publik (`/`, `/menu`, `/our-story`, `/visit`, `/privacy`) tetap **prerender statis**. Area `/admin` bersifat dinamis (`force-dynamic`) dan dilindungi di dua lapis: Proxy (middleware di `src/proxy.ts`) untuk redirect cepat, dan pemeriksaan server (`requireUser`/`can`) di setiap layout/action. Otorisasi bersifat *default-deny* — batas sebenarnya ada di server, bukan di UI.
+
+## Admin CMS
+
+Area administrasi ada di `/admin` (login di `/admin/login`).
+
+- **Auth:** Auth.js v5 (Credentials) dengan sesi JWT; kata sandi di-hash `scrypt` (`crypto.scrypt`) dan dicabut melalui `users.sessionVersion` yang diperiksa di server.
+- **Peran:** `owner` | `admin` | `editor` | `viewer`, dipetakan ke izin lewat `can(role, permission)` (`src/lib/auth/roles.ts`).
+- **Database:** Drizzle ORM. Produksi memakai Postgres Neon (`DATABASE_URL`); lokal/tes memakai PGlite embedded (tanpa Docker) dengan `ALLOW_LOCAL_DB=1`.
+- **Audit:** setiap login (berhasil/gagal) dan aksi tulis dicatat ke tabel `audit_logs`; login dibatasi (rate limit) via `login_attempts`.
+
+### Menjalankan admin di lokal
+
+1. Salin env: `cp .env.example .env.local`, isi `OWNER_EMAIL`/`OWNER_PASSWORD`, dan setel `ALLOW_LOCAL_DB=1` (serta `AUTH_SECRET`).
+2. Siapkan database + akun owner: `npm run db:prepare`.
+3. Jalankan `npm run dev` lalu buka `http://localhost:3000/admin`.
+
+Di produksi: setel `DATABASE_URL` (Neon pooled), `AUTH_SECRET`, dan `AUTH_URL`; jalankan `npm run db:migrate` lalu `npm run create-owner`. **Jangan** setel `ALLOW_LOCAL_DB` di produksi.
+
 
 ## Testing & Hasil Pemeriksaan
 

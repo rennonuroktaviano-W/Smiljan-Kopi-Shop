@@ -10,24 +10,35 @@
     "typecheck": "tsc --noEmit",
     "validate:menu": "node scripts/validate-menu.mjs",
     "verify:headers": "node scripts/verify-headers.mjs",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx scripts/db-migrate.ts",
+    "db:prepare": "tsx scripts/db-prepare.ts",
+    "create-owner": "tsx scripts/create-owner.ts",
     "test:e2e": "playwright test",
     "test:e2e:whatsapp": "playwright test --config playwright.whatsapp.config.ts"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.2.0",
+    "drizzle-orm": "^0.45.4",
     "next": "16.4.0",
+    "next-auth": "^5.0.0-beta.32",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
     "@playwright/test": "^1.64.0",
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^16.6.1",
+    "drizzle-kit": "^0.31.11",
     "eslint": "^9",
     "eslint-config-next": "16.4.0",
     "lighthouse": "^13.5.0",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }
