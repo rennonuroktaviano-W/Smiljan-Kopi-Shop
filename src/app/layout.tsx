@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     url: siteUrl,
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "SMILJAN — KOPI SHOP",
     description:
       "SMILJAN Kopi Shop. Kopi yang diracik pelan, untuk hari yang dijalani tenang.",
